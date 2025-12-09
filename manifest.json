@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "Luma Data Scraper",
+  "version": "1.0.0",
+  "description": "自动读取Luma网站cookies并实现翻页数据抓取功能",
+  "permissions": [
+    "cookies",
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.luma.ai/*",
+    "*://*.lu.ma/*",
+    "*://*.luma.com/*"
+  ],
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.luma.ai/*",
+        "*://*.lu.ma/*",
+        "*://*.luma.com/*"
+      ],
+      "js": [
+        "js/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Luma Data Scraper"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "js/*"
+      ],
+      "matches": [
+        "*://*.luma.ai/*",
+        "*://*.lu.ma/*",
+        "*://*.luma.com/*"
+      ]
+    }
+  ]
+}

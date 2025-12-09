@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luma Data Scraper</title>
+  <link rel="stylesheet" href="css/popup.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Luma Data Scraper</h1>
+      <div class="status-indicator">
+        <span class="status-dot" id="status-dot"></span>
+        <span class="status-text" id="status-text">未连接</span>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- 认证状态 -->
+      <section class="section">
+        <h3>认证状态</h3>
+        <div class="cookies-info">
+          <div class="cookies-count" id="cookies-count">检查中...</div>
+          <button class="btn btn-small" id="refresh-cookies">刷新</button>
+        </div>
+        <div class="cookies-details" id="cookies-details"></div>
+      </section>
+
+
+      <!-- 插件状态 -->
+      <section class="section">
+        <h3>插件状态</h3>
+        <div class="api-status">
+          <div class="api-indicator" id="api-indicator"></div>
+          <div id="plugin-status">检查中...</div>
+        </div>
+      </section>
+
+      <!-- 数据管理 -->
+      <section class="section">
+        <h3>数据管理</h3>
+        <div class="data-management">
+          <button class="btn btn-success" id="export-data">导出数据</button>
+          <button class="btn btn-warning" id="view-history">查看历史</button>
+          <button class="btn btn-danger" id="clear-data">清除数据</button>
+        </div>
+        <div class="data-summary" id="data-summary">
+          暂无数据
+        </div>
+      </section>
+
+      <!-- 历史数据 -->
+      <section class="section" id="history-section" style="display: none;">
+        <h3>历史数据</h3>
+        <div class="history-list" id="history-list">
+          <!-- 历史记录将动态加载 -->
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="#" id="help-link">帮助</a>
+        <a href="#" id="about-link">关于</a>
+      </div>
+      <div class="version">v2.0.0</div>
+    </footer>
+  </div>
+
+  <!-- 加载提示 -->
+  <div class="loading-overlay" id="loading-overlay">
+    <div class="spinner"></div>
+    <div class="loading-text">加载中...</div>
+  </div>
+
+  <script src="js/popup.js"></script>
+</body>
+</html>

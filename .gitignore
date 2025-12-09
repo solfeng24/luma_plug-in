@@ -1,0 +1,19 @@
+# 忽略 node_modules
+node_modules/
+
+# 忽略环境变量文件
+.env
+
+
+# 忽略日志文件
+*.log
+
+# 忽略构建产物
+/dist
+/logs
+.DS_Store
+/generated/prisma
+/test
+/node_modules
+/md
+.claude
