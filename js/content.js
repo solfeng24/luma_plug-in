@@ -854,20 +854,23 @@ class LumaDataScraper {
       progressText.textContent = `已停止 (共抓取 ${eventState.totalVisitors ? eventState.totalVisitors.length : 0} 条数据)`;
     }
     
-    // 重置按钮状态
+    // 重置按钮状态并添加重置按钮
     if (scrapeAutoBtn) {
       scrapeAutoBtn.textContent = '🤖 自动抓取';
-      scrapeAutoBtn.disabled = false;
-      scrapeAutoBtn.style.background = '';
+      scrapeAutoBtn.disabled = true;
+      scrapeAutoBtn.style.background = '#6c757d';
     }
     if (scrapeManualBtn) {
       scrapeManualBtn.textContent = '👆 手动抓取';
-      scrapeManualBtn.disabled = false;
-      scrapeManualBtn.style.background = '';
+      scrapeManualBtn.disabled = true;
+      scrapeManualBtn.style.background = '#6c757d';
     }
     if (stopBtn) {
       stopBtn.style.display = 'none';
     }
+    
+    // 添加重置按钮
+    this.addResetButton(eventElement, eventApiId);
     
     if (manualControls) {
       manualControls.style.display = 'none';
@@ -933,6 +936,7 @@ class LumaDataScraper {
 
         console.log('✅ 数据已保存到本地存储');
         this.addExportButton(eventState.eventElement, eventState.totalVisitors, eventState.eventId);
+        this.addResetButton(eventState.eventElement, eventState.eventId);
         
       } catch (error) {
         console.error('❌ 保存数据失败:', error);
@@ -940,6 +944,7 @@ class LumaDataScraper {
         if (error.message.includes('扩展') || error.message.includes('Extension')) {
           progressText.textContent = `抓取完成! 扩展存储失效，请直接导出CSV`;
           this.addExportButton(eventState.eventElement, eventState.totalVisitors, eventState.eventId);
+          this.addResetButton(eventState.eventElement, eventState.eventId);
         } else {
           progressText.textContent = `抓取完成但保存失败: ${error.message}`;
         }
@@ -966,6 +971,100 @@ class LumaDataScraper {
     });
     
     actionsRow.parentNode.appendChild(exportBtn);
+  }
+
+  // Add reset button
+  addResetButton(eventElement, eventApiId) {
+    const actionsContainer = eventElement.querySelector('.luma-event-actions');
+    
+    // 检查是否已经有重置按钮
+    if (actionsContainer.querySelector('.reset-btn')) {
+      return;
+    }
+    
+    const resetBtn = document.createElement('button');
+    resetBtn.className = 'luma-btn luma-btn-secondary reset-btn';
+    resetBtn.textContent = '🔄 重置状态';
+    resetBtn.style.cssText = `
+      margin-top: 8px;
+      width: 100%;
+      background: #17a2b8;
+      color: white;
+    `;
+    
+    resetBtn.addEventListener('click', () => {
+      this.resetEventState(eventApiId, eventElement);
+    });
+    
+    actionsContainer.appendChild(resetBtn);
+  }
+
+  // Reset event state to initial condition
+  resetEventState(eventApiId, eventElement) {
+    console.log(`🔄 重置事件状态: ${eventApiId}`);
+    
+    // 清除事件状态
+    this.clearEventState(eventApiId);
+    
+    // 重置UI元素
+    const progressEl = eventElement.querySelector('.luma-progress');
+    const progressText = eventElement.querySelector('.progress-text');
+    const progressFill = eventElement.querySelector('.luma-progress-fill');
+    const pageCountEl = eventElement.querySelector('.page-count');
+    const dataCountEl = eventElement.querySelector('.data-count');
+    const scrapeAutoBtn = eventElement.querySelector('.scrape-auto-btn');
+    const scrapeManualBtn = eventElement.querySelector('.scrape-manual-btn');
+    const stopBtn = eventElement.querySelector('.stop-btn');
+    const manualControls = eventElement.querySelector('.luma-manual-controls');
+    const resetBtn = eventElement.querySelector('.reset-btn');
+    const exportBtn = eventElement.querySelector('.export-btn');
+    
+    // 隐藏进度条
+    if (progressEl) {
+      progressEl.classList.remove('active');
+    }
+    
+    // 重置进度文本和填充
+    if (progressText) {
+      progressText.textContent = '准备中...';
+    }
+    if (progressFill) {
+      progressFill.style.width = '0%';
+    }
+    if (pageCountEl) {
+      pageCountEl.textContent = '0';
+    }
+    if (dataCountEl) {
+      dataCountEl.textContent = '0';
+    }
+    
+    // 重置按钮状态
+    if (scrapeAutoBtn) {
+      scrapeAutoBtn.textContent = '🤖 自动抓取';
+      scrapeAutoBtn.disabled = false;
+      scrapeAutoBtn.style.background = '';
+    }
+    if (scrapeManualBtn) {
+      scrapeManualBtn.textContent = '👆 手动抓取';
+      scrapeManualBtn.disabled = false;
+      scrapeManualBtn.style.background = '';
+    }
+    if (stopBtn) {
+      stopBtn.style.display = 'none';
+    }
+    if (manualControls) {
+      manualControls.style.display = 'none';
+    }
+    
+    // 移除重置按钮和导出按钮
+    if (resetBtn) {
+      resetBtn.remove();
+    }
+    if (exportBtn) {
+      exportBtn.remove();
+    }
+    
+    console.log('✅ 事件状态已重置到初始状态');
   }
 
   // Export to CSV

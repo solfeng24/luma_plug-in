@@ -9,7 +9,7 @@ class LumaPopup {
       eventsLoaded: false,
       eventsCount: 0
     };
-    
+
     this.init();
   }
 
@@ -19,16 +19,16 @@ class LumaPopup {
       await this.checkLumaPage();
       await this.loadCookies();
       await this.loadStoredData();
-      
+
       this.bindEvents();
       this.updateUI();
       this.hideLoading();
-      
+
       // 定期更新状态
       setInterval(() => {
         this.updatePluginStatus();
       }, 3000);
-      
+
     } catch (error) {
       console.error('Popup initialization error:', error);
       this.hideLoading();
@@ -43,17 +43,17 @@ class LumaPopup {
 
   checkLumaPage() {
     if (this.currentTab && this.currentTab.url) {
-      this.isLumaPage = this.currentTab.url.includes('luma.ai') || 
-                       this.currentTab.url.includes('lu.ma') ||
-                       this.currentTab.url.includes('luma.com');
+      this.isLumaPage = this.currentTab.url.includes('luma.ai') ||
+        this.currentTab.url.includes('lu.ma') ||
+        this.currentTab.url.includes('luma.com');
     }
-    
+
     const statusDot = document.getElementById('status-dot');
     const statusText = document.getElementById('status-text');
-    
+
     if (this.isLumaPage) {
       statusDot.classList.add('connected');
-      
+
       // 检查是否是事件页面
       if (this.currentTab.url.match(/\/event\/[^\/]+/)) {
         statusText.textContent = '已连接到Luma事件页';
@@ -69,7 +69,7 @@ class LumaPopup {
   async loadCookies() {
     try {
       const response = await chrome.runtime.sendMessage({ action: 'getCookies' });
-      
+
       if (response.success) {
         this.authCookie = response.authCookie;
         this.authValue = response.authValue;
@@ -87,45 +87,42 @@ class LumaPopup {
   updateCookiesDisplay(error = null) {
     const cookiesCount = document.getElementById('cookies-count');
     const cookiesDetails = document.getElementById('cookies-details');
-    
+
     if (error) {
       cookiesCount.textContent = 'Auth Cookie 获取失败';
       cookiesDetails.textContent = error;
       return;
     }
-    
+
     if (!this.authCookie) {
       cookiesCount.textContent = '未找到 Auth Cookie';
       cookiesDetails.textContent = '未找到 luma.auth-session-key cookie';
       return;
     }
-    
+
     cookiesCount.textContent = '✓ Auth Cookie 已获取';
-    
-    const expiryDate = this.authCookie.expirationDate 
+
+    const expiryDate = this.authCookie.expirationDate
       ? new Date(this.authCookie.expirationDate * 1000).toLocaleString()
       : '会话结束时';
-    
+
     // 提取authToken (cookie值的第一部分，.之前的部分)  
     const authToken = this.authValue.split('.')[0];
-      
+
     const detailsText = `Cookie: luma.auth-session-key
-域名: ${this.authCookie.domain}
-AuthToken: ${authToken}
-完整值: ${this.authValue.substring(0, 30)}...
 过期时间: ${expiryDate}
 安全: ${this.authCookie.secure ? '是' : '否'}
 HttpOnly: ${this.authCookie.httpOnly ? '是' : '否'}
 
 ✅ API调用已就绪`;
-    
+
     cookiesDetails.textContent = detailsText;
   }
 
   async loadStoredData() {
     try {
       const response = await chrome.runtime.sendMessage({ action: 'getData' });
-      
+
       if (response.success) {
         this.updateDataSummary(response.data);
       }
@@ -136,17 +133,17 @@ HttpOnly: ${this.authCookie.httpOnly ? '是' : '否'}
 
   updateDataSummary(data) {
     const summary = document.getElementById('data-summary');
-    
+
     if (!data || Object.keys(data).length === 0) {
       summary.textContent = '暂无数据';
       return;
     }
-    
+
     const sessions = Object.keys(data).length;
     const totalItems = Object.values(data).reduce((sum, session) => {
       return sum + (session.data ? session.data.length : 0);
     }, 0);
-    
+
     summary.textContent = `${sessions} 个抓取记录，共 ${totalItems} 条数据`;
   }
 
@@ -200,7 +197,7 @@ HttpOnly: ${this.authCookie.httpOnly ? '是' : '否'}
       if (response && response.loaded) {
         this.pluginStatus.eventsLoaded = response.eventsListVisible;
         this.pluginStatus.eventsCount = response.eventsCount;
-        
+
         if (response.eventsListVisible && response.eventsCount > 0) {
           this.updatePluginStatusUI(`事件列表已加载 (${response.eventsCount}个事件)`, true);
         } else if (response.authStatus) {
@@ -219,11 +216,11 @@ HttpOnly: ${this.authCookie.httpOnly ? '是' : '否'}
   updatePluginStatusUI(message, isReady) {
     const indicator = document.getElementById('api-indicator');
     const status = document.getElementById('plugin-status');
-    
+
     if (indicator) {
       indicator.className = isReady ? 'api-indicator ready' : 'api-indicator';
     }
-    
+
     if (status) {
       status.textContent = message;
     }
@@ -232,7 +229,7 @@ HttpOnly: ${this.authCookie.httpOnly ? '是' : '否'}
   async exportData() {
     try {
       const response = await chrome.runtime.sendMessage({ action: 'getData' });
-      
+
       if (response.success && response.data) {
         this.downloadData(response.data);
       } else {
@@ -247,7 +244,7 @@ HttpOnly: ${this.authCookie.httpOnly ? '是' : '否'}
   downloadData(data) {
     // 将所有数据合并到一个数组中
     const allData = [];
-    
+
     Object.keys(data).forEach(key => {
       const session = data[key];
       if (session.data && Array.isArray(session.data)) {
@@ -270,7 +267,7 @@ HttpOnly: ${this.authCookie.httpOnly ? '是' : '否'}
 
     // 转换为CSV
     const csv = this.convertToCSV(allData);
-    
+
     // 下载文件
     const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
@@ -283,13 +280,13 @@ HttpOnly: ${this.authCookie.httpOnly ? '是' : '否'}
 
   convertToCSV(data) {
     if (data.length === 0) return '';
-    
+
     const headers = Object.keys(data[0]);
     const csvRows = [];
-    
+
     // 添加表头
     csvRows.push(headers.map(h => `"${h}"`).join(','));
-    
+
     // 添加数据行
     data.forEach(row => {
       const values = headers.map(header => {
@@ -304,14 +301,14 @@ HttpOnly: ${this.authCookie.httpOnly ? '是' : '否'}
       });
       csvRows.push(values.join(','));
     });
-    
+
     return csvRows.join('\n');
   }
 
   toggleHistory() {
     const historySection = document.getElementById('history-section');
     const viewBtn = document.getElementById('view-history');
-    
+
     if (historySection.style.display === 'none') {
       this.loadHistory();
       historySection.style.display = 'block';
@@ -325,7 +322,7 @@ HttpOnly: ${this.authCookie.httpOnly ? '是' : '否'}
   async loadHistory() {
     try {
       const response = await chrome.runtime.sendMessage({ action: 'getData' });
-      
+
       if (response.success && response.data) {
         this.displayHistory(response.data);
       }
@@ -337,17 +334,17 @@ HttpOnly: ${this.authCookie.httpOnly ? '是' : '否'}
   displayHistory(data) {
     const historyList = document.getElementById('history-list');
     historyList.innerHTML = '';
-    
+
     if (!data || Object.keys(data).length === 0) {
       historyList.innerHTML = '<div style="text-align: center; color: #636e72; padding: 20px;">暂无历史记录</div>';
       return;
     }
-    
+
     Object.keys(data).forEach(key => {
       const session = data[key];
       const date = new Date(session.timestamp).toLocaleString();
       const count = session.data ? session.data.length : 0;
-      
+
       const item = document.createElement('div');
       item.className = 'history-item';
       item.innerHTML = `
@@ -357,7 +354,7 @@ HttpOnly: ${this.authCookie.httpOnly ? '是' : '否'}
         </div>
         <div class="history-count">${count} 条</div>
       `;
-      
+
       historyList.appendChild(item);
     });
   }
@@ -366,7 +363,7 @@ HttpOnly: ${this.authCookie.httpOnly ? '是' : '否'}
     if (!confirm('确定要清除所有抓取数据吗？此操作不可恢复。')) {
       return;
     }
-    
+
     try {
       await chrome.storage.local.clear();
       this.updateDataSummary({});
@@ -401,9 +398,9 @@ HttpOnly: ${this.authCookie.httpOnly ? '是' : '否'}
       font-size: 12px;
     `;
     errorDiv.textContent = message;
-    
+
     container.appendChild(errorDiv);
-    
+
     setTimeout(() => {
       if (errorDiv.parentNode) {
         errorDiv.parentNode.removeChild(errorDiv);
