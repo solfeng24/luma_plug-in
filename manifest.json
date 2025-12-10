@@ -3,29 +3,15 @@
   "name": "EventMate",
   "version": "1.0.0",
   "description": "Automatically read Luma website cookies and implement pagination data scraping functionality",
-  "permissions": [
-    "cookies",
-    "activeTab",
-    "storage"
-  ],
-  "host_permissions": [
-    "*://*.luma.ai/*",
-    "*://*.lu.ma/*",
-    "*://*.luma.com/*"
-  ],
+  "permissions": ["cookies", "activeTab", "storage"],
+  "host_permissions": ["*://*.luma.ai/*", "*://*.lu.ma/*", "*://*.luma.com/*"],
   "background": {
     "service_worker": "js/background.js"
   },
   "content_scripts": [
     {
-      "matches": [
-        "*://*.luma.ai/*",
-        "*://*.lu.ma/*",
-        "*://*.luma.com/*"
-      ],
-      "js": [
-        "js/content.js"
-      ],
+      "matches": ["*://*.luma.ai/*", "*://*.lu.ma/*", "*://*.luma.com/*"],
+      "js": ["js/content.js"],
       "run_at": "document_idle"
     }
   ],
@@ -35,14 +21,8 @@
   },
   "web_accessible_resources": [
     {
-      "resources": [
-        "js/*"
-      ],
-      "matches": [
-        "*://*.luma.ai/*",
-        "*://*.lu.ma/*",
-        "*://*.luma.com/*"
-      ]
+      "resources": ["js/*"],
+      "matches": ["*://*.luma.ai/*", "*://*.lu.ma/*", "*://*.luma.com/*"]
     }
   ]
 }

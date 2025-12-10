@@ -3,154 +3,154 @@
 // Language configuration
 const CONTENT_LANGUAGES = {
   en: {
-    title: 'EventMate',
+    title: "EventMate",
     status: {
-      authenticated: 'Authenticated',
-      found: 'Found',
-      scrappable: 'scrappable events',
-      cookieAuthorized: 'Cookie permission authorized, can be modified anytime'
+      authenticated: "Authenticated",
+      found: "Found",
+      scrappable: "scrappable events",
+      cookieAuthorized: "Cookie permission authorized, can be modified anytime",
     },
     events: {
-      guestListVisible: 'Guest list visible',
-      hasAccess: 'Has access',
-      noAccess: 'No access',
-      guestListHidden: 'Guest list hidden',
-      startTime: 'Start',
-      location: 'Location',
-      offline: 'Offline event',
-      startTimeLabel: 'Start Time:',
-      endTimeLabel: 'End Time:',
-      scrapeStatusLabel: 'Scrape Status:',
-      guestCountLabel: 'Participants:',
-      locationLabel: 'Location:',
-      visibilityLabel: 'Visibility:',
-      description: 'Description',
-      viewOriginal: 'View Original Page',
-      close: 'Close'
+      guestListVisible: "Guest list visible",
+      hasAccess: "Has access",
+      noAccess: "No access",
+      guestListHidden: "Guest list hidden",
+      startTime: "Start",
+      location: "Location",
+      offline: "Offline event",
+      startTimeLabel: "Start Time:",
+      endTimeLabel: "End Time:",
+      scrapeStatusLabel: "Scrape Status:",
+      guestCountLabel: "Participants:",
+      locationLabel: "Location:",
+      visibilityLabel: "Visibility:",
+      description: "Description",
+      viewOriginal: "View Original Page",
+      close: "Close",
     },
     buttons: {
-      autoScrape: 'Auto Scrape',
-      manualScrape: 'Manual Scrape',
-      scraping: 'Scraping...',
-      stop: 'Stop',
-      nextPage: 'Next Page',
-      retry: 'Retry',
-      export: 'Export CSV',
-      reset: 'Reset Status',
-      completed: 'Completed',
-      viewDetails: 'View Details'
+      autoScrape: "Auto Scrape",
+      manualScrape: "Manual Scrape",
+      scraping: "Scraping...",
+      stop: "Stop",
+      nextPage: "Next Page",
+      retry: "Retry",
+      export: "Export CSV",
+      reset: "Reset Status",
+      completed: "Completed",
+      viewDetails: "View Details",
     },
     messages: {
-      noScrapableEvents: 'No scrappable events',
-      noDataToExport: 'No data to export',
-      page: 'Page',
-      completed: 'completed',
-      newData: 'new data',
-      deduped: '(after deduplication)',
-      total: 'total',
-      waiting: 'Waiting',
-      seconds: 'seconds to continue',
-      stopped: 'Stopped',
-      waitingSeconds: 'Waiting',
-      secondsAndContinue: 'seconds to continue...',
-      scraped: 'scraped',
-      items: 'items',
-      failed: 'failed',
-      refreshPage: 'Please refresh the page manually',
-      extensionReload: 'Extension needs reload',
-      extensionUpdated: 'Extension updated, page reload required',
-      ready: 'Ready...',
-      extensionStorageInvalid: 'Extension storage invalid, please export CSV directly',
-      possibleReasons: 'Possible reasons:',
-      networkIssue: 'Network connection issue',
-      apiUnavailable: 'API temporarily unavailable',
-      authAbnormal: 'Authentication status abnormal'
-    }
+      noScrapableEvents: "No scrappable events",
+      noDataToExport: "No data to export",
+      page: "Page",
+      completed: "completed",
+      newData: "new data",
+      deduped: "(after deduplication)",
+      total: "total",
+      waiting: "Waiting",
+      seconds: "seconds to continue",
+      stopped: "Stopped",
+      waitingSeconds: "Waiting",
+      secondsAndContinue: "seconds to continue...",
+      scraped: "scraped",
+      items: "items",
+      failed: "failed",
+      refreshPage: "Please refresh the page manually",
+      extensionReload: "Extension needs reload",
+      extensionUpdated: "Extension updated, page reload required",
+      ready: "Ready...",
+      extensionStorageInvalid: "Extension storage invalid, please export CSV directly",
+      possibleReasons: "Possible reasons:",
+      networkIssue: "Network connection issue",
+      apiUnavailable: "API temporarily unavailable",
+      authAbnormal: "Authentication status abnormal",
+    },
   },
   cn: {
-    title: 'EventMate',
+    title: "EventMate",
     status: {
-      authenticated: '已认证',
-      found: '找到',
-      scrappable: '个可抓取活动',
-      cookieAuthorized: 'Cookie权限已授权，可随时修改'
+      authenticated: "已认证",
+      found: "找到",
+      scrappable: "个可抓取活动",
+      cookieAuthorized: "Cookie权限已授权，可随时修改",
     },
     events: {
-      guestListVisible: 'Guest列表可见',
-      hasAccess: '有访问权限',
-      noAccess: '无访问权限',
-      guestListHidden: 'Guest列表不可见',
-      startTime: '时间',
-      location: '地点',
-      offline: '线下活动',
-      startTimeLabel: '开始时间:',
-      endTimeLabel: '结束时间:',
-      scrapeStatusLabel: '抓取状态:',
-      guestCountLabel: '参与人数:',
-      locationLabel: '地点:',
-      visibilityLabel: '可见性:',
-      description: '描述',
-      viewOriginal: '查看原页面',
-      close: '关闭'
+      guestListVisible: "Guest列表可见",
+      hasAccess: "有访问权限",
+      noAccess: "无访问权限",
+      guestListHidden: "Guest列表不可见",
+      startTime: "时间",
+      location: "地点",
+      offline: "线下活动",
+      startTimeLabel: "开始时间:",
+      endTimeLabel: "结束时间:",
+      scrapeStatusLabel: "抓取状态:",
+      guestCountLabel: "参与人数:",
+      locationLabel: "地点:",
+      visibilityLabel: "可见性:",
+      description: "描述",
+      viewOriginal: "查看原页面",
+      close: "关闭",
     },
     buttons: {
-      autoScrape: '🤖 自动抓取',
-      manualScrape: '👆 手动抓取',
-      scraping: '抓取中...',
-      stop: '停止',
-      nextPage: '下一页',
-      retry: '重试',
-      export: '导出 CSV',
-      reset: '🔄 重置状态',
-      completed: '✅ 抓取完成',
-      viewDetails: '查看详情'
+      autoScrape: "🤖 自动抓取",
+      manualScrape: "👆 手动抓取",
+      scraping: "抓取中...",
+      stop: "停止",
+      nextPage: "下一页",
+      retry: "重试",
+      export: "导出 CSV",
+      reset: "🔄 重置状态",
+      completed: "✅ 抓取完成",
+      viewDetails: "查看详情",
     },
     messages: {
-      noScrapableEvents: '暂无可抓取的活动',
-      noDataToExport: '没有数据可导出',
-      page: '页',
-      completed: '完成',
-      newData: '条新数据',
-      deduped: '(去重后)',
-      total: '累计',
-      waiting: '等待',
-      seconds: '秒后继续',
-      stopped: '已停止',
-      waitingSeconds: '等待',
-      secondsAndContinue: '秒后继续...',
-      scraped: '共抓取',
-      items: '条数据',
-      failed: '失败',
-      refreshPage: '请手动刷新页面重试',
-      extensionReload: '插件需要重新加载',
-      extensionUpdated: '扩展已更新，需要重新加载页面',
-      ready: '准备中...',
-      extensionStorageInvalid: '扩展存储失效，请直接导出CSV',
-      possibleReasons: '可能的原因：',
-      networkIssue: '网络连接问题',
-      apiUnavailable: 'API临时不可用',
-      authAbnormal: '认证状态异常'
-    }
-  }
+      noScrapableEvents: "暂无可抓取的活动",
+      noDataToExport: "没有数据可导出",
+      page: "页",
+      completed: "完成",
+      newData: "条新数据",
+      deduped: "(去重后)",
+      total: "累计",
+      waiting: "等待",
+      seconds: "秒后继续",
+      stopped: "已停止",
+      waitingSeconds: "等待",
+      secondsAndContinue: "秒后继续...",
+      scraped: "共抓取",
+      items: "条数据",
+      failed: "失败",
+      refreshPage: "请手动刷新页面重试",
+      extensionReload: "插件需要重新加载",
+      extensionUpdated: "扩展已更新，需要重新加载页面",
+      ready: "准备中...",
+      extensionStorageInvalid: "扩展存储失效，请直接导出CSV",
+      possibleReasons: "可能的原因：",
+      networkIssue: "网络连接问题",
+      apiUnavailable: "API临时不可用",
+      authAbnormal: "认证状态异常",
+    },
+  },
 };
 
 // Content language manager
 const ContentLanguageManager = {
   getCurrentLang() {
-    return localStorage.getItem('luma-scraper-lang') || 'en';
+    return localStorage.getItem("luma-scraper-lang") || "en";
   },
 
   getText(path, lang = null) {
     lang = lang || this.getCurrentLang();
-    const keys = path.split('.');
+    const keys = path.split(".");
     let text = CONTENT_LANGUAGES[lang];
-    
+
     for (const key of keys) {
       text = text?.[key];
     }
-    
+
     return text || path;
-  }
+  },
 };
 
 class LumaDataScraper {
@@ -178,21 +178,23 @@ class LumaDataScraper {
   async safeChromeMessage(message) {
     try {
       if (!chrome?.runtime?.sendMessage) {
-        throw new Error('Chrome Extension API unavailable');
+        throw new Error("Chrome Extension API unavailable");
       }
 
       if (!chrome.runtime.id) {
-        throw new Error('Extension context invalidated');
+        throw new Error("Extension context invalidated");
       }
 
       return await chrome.runtime.sendMessage(message);
     } catch (error) {
-      if (error.message.includes('Extension context invalidated') ||
-        error.message.includes('Extension context invalidated')) {
-        console.log('🔄 Extension context invalidated, attempting re-initialization...');
+      if (
+        error.message.includes("Extension context invalidated") ||
+        error.message.includes("Extension context invalidated")
+      ) {
+        console.log("🔄 Extension context invalidated, attempting re-initialization...");
         this.extensionValid = false;
         this.showExtensionError();
-        throw new Error('Extension has been reloaded');
+        throw new Error("Extension has been reloaded");
       }
       throw error;
     }
@@ -200,11 +202,11 @@ class LumaDataScraper {
 
   // Show extension error notification
   showExtensionError() {
-    const existingError = document.querySelector('#luma-extension-error');
+    const existingError = document.querySelector("#luma-extension-error");
     if (existingError) return;
 
-    const errorDiv = document.createElement('div');
-    errorDiv.id = 'luma-extension-error';
+    const errorDiv = document.createElement("div");
+    errorDiv.id = "luma-extension-error";
     errorDiv.style.cssText = `
       position: fixed;
       top: 20px;
@@ -223,8 +225,8 @@ class LumaDataScraper {
     `;
 
     errorDiv.innerHTML = `
-      <div style="margin-bottom: 10px;"><strong>🔄 ${ContentLanguageManager.getText('messages.extensionReload')}</strong></div>
-      <div style="margin-bottom: 10px;">${ContentLanguageManager.getText('messages.extensionUpdated')}</div>
+      <div style="margin-bottom: 10px;"><strong>🔄 ${ContentLanguageManager.getText("messages.extensionReload")}</strong></div>
+      <div style="margin-bottom: 10px;">${ContentLanguageManager.getText("messages.extensionUpdated")}</div>
     `;
 
     document.body.appendChild(errorDiv);
@@ -238,7 +240,7 @@ class LumaDataScraper {
 
   // Initialize the scraper
   async init() {
-    console.log('🎯 EventMate initialized on:', window.location.href);
+    console.log("🎯 EventMate initialized on:", window.location.href);
 
     // 🔒 Security first: Only based on user's explicit consent status, no automatic Cookie detection
     const savedConsent = await this.getCookieConsentFromStorage();
@@ -246,15 +248,15 @@ class LumaDataScraper {
     if (savedConsent === true) {
       // User has explicitly agreed before, continue initialization
       this.cookieConsent = true;
-      console.log('✅ Detected user\'s previous explicit consent');
+      console.log("✅ Detected user's previous explicit consent");
       await this.continueInit();
     } else if (savedConsent === false) {
       // User has explicitly denied before
       this.cookieConsent = false;
-      console.log('⚠️ User previously denied Cookie usage, not showing interface');
+      console.log("⚠️ User previously denied Cookie usage, not showing interface");
     } else {
       // First visit, Cookie consent now handled by popup
-      console.log('❓ First visit, need user consent in plugin popup');
+      console.log("❓ First visit, need user consent in plugin popup");
       // Don't show Cookie consent interface here, handled by popup
     }
 
@@ -268,16 +270,15 @@ class LumaDataScraper {
   async continueInit() {
     try {
       const cookieSuccess = await this.getCookies();
-      console.log('Cookie retrieval result:', cookieSuccess);
+      console.log("Cookie retrieval result:", cookieSuccess);
 
       await this.initEventsList();
 
       window.lumaDataScraper = this;
       this.initComplete = true;
-      console.log('✅ Luma plugin initialization completed');
-
+      console.log("✅ Luma plugin initialization completed");
     } catch (error) {
-      console.error('❌ Luma plugin initialization failed:', error);
+      console.error("❌ Luma plugin initialization failed:", error);
       this.initComplete = false;
     }
   }
@@ -285,12 +286,12 @@ class LumaDataScraper {
   // Get cookie consent from chrome storage (now async)
   async getCookieConsentFromStorage() {
     try {
-      const result = await chrome.storage.local.get(['cookieConsent']);
-      if (result.cookieConsent === 'granted') return true;
-      if (result.cookieConsent === 'denied') return false;
+      const result = await chrome.storage.local.get(["cookieConsent"]);
+      if (result.cookieConsent === "granted") return true;
+      if (result.cookieConsent === "denied") return false;
       return null; // Status not set
     } catch (error) {
-      console.log('Cannot read Cookie consent status:', error);
+      console.log("Cannot read Cookie consent status:", error);
       return null;
     }
   }
@@ -305,19 +306,19 @@ class LumaDataScraper {
   // Save cookie consent to local storage
   async saveCookieConsentToStorage(consent) {
     try {
-      const value = consent ? 'granted' : 'denied';
+      const value = consent ? "granted" : "denied";
       await chrome.storage.local.set({ cookieConsent: value });
     } catch (error) {
-      console.log('Cannot save Cookie consent status:', error);
+      console.log("Cannot save Cookie consent status:", error);
     }
   }
 
   // Clear cookie consent from local storage
   clearCookieConsentFromStorage() {
     try {
-      localStorage.removeItem('luma-cookie-consent');
+      localStorage.removeItem("luma-cookie-consent");
     } catch (error) {
-      console.log('Cannot clear Cookie consent status:', error);
+      console.log("Cannot clear Cookie consent status:", error);
     }
   }
 
@@ -326,7 +327,7 @@ class LumaDataScraper {
 
   // Handle cookie consent response
   async handleCookieConsent(accepted) {
-    const consentDiv = document.querySelector('#luma-cookie-consent');
+    const consentDiv = document.querySelector("#luma-cookie-consent");
 
     if (consentDiv) {
       consentDiv.remove();
@@ -335,12 +336,12 @@ class LumaDataScraper {
     if (accepted) {
       this.cookieConsent = true;
       await this.saveCookieConsentToStorage(true); // Always save user choice, but provide ability to re-choose
-      console.log('✅ User agreed to Cookie usage');
+      console.log("✅ User agreed to Cookie usage");
       await this.continueInit();
     } else {
       this.cookieConsent = false;
       await this.saveCookieConsentToStorage(false); // Explicitly save denial status
-      console.log('❌ User denied Cookie usage, not showing interface');
+      console.log("❌ User denied Cookie usage, not showing interface");
     }
   }
 
@@ -355,32 +356,32 @@ class LumaDataScraper {
     try {
       // Check Cookie consent status
       if (!this.cookieConsent) {
-        throw new Error('User has not agreed to Cookie usage');
+        throw new Error("User has not agreed to Cookie usage");
       }
 
       if (!this.extensionValid) {
-        throw new Error('Extension context invalidated');
+        throw new Error("Extension context invalidated");
       }
 
-      const response = await this.safeChromeMessage({ action: 'getCookies' });
+      const response = await this.safeChromeMessage({ action: "getCookies" });
       if (response.success) {
         this.authCookie = response.authCookie;
         this.authValue = response.authValue;
         this.cookieHeader = response.cookieHeader;
-        console.log('Auth cookie loaded:', {
+        console.log("Auth cookie loaded:", {
           domain: response.domain,
           authenticated: true,
-          length: this.authValue.length
+          length: this.authValue.length,
         });
         return true;
       } else {
-        console.error('Auth cookie not found:', response.error);
+        console.error("Auth cookie not found:", response.error);
         return false;
       }
     } catch (error) {
-      console.error('Failed to get auth cookie:', error);
+      console.error("Failed to get auth cookie:", error);
 
-      if (error.message.includes('Extension')) {
+      if (error.message.includes("Extension")) {
         this.extensionValid = false;
       }
 
@@ -394,12 +395,12 @@ class LumaDataScraper {
       this.eventStates.set(eventId, {
         eventId: eventId,
         eventElement: eventElement,
-        mode: 'auto',
+        mode: "auto",
         page: 0,
         visitors: [],
         cursor: null,
         isRunning: false,
-        totalVisitors: []
+        totalVisitors: [],
       });
     }
 
@@ -419,64 +420,63 @@ class LumaDataScraper {
   // Initialize events list UI
   async initEventsList() {
     if (!this.authValue) {
-      console.log('❌ No auth token, skipping events list initialization');
+      console.log("❌ No auth token, skipping events list initialization");
       this.createFallbackUI();
       return;
     }
 
-    console.log('🔄 Initializing events list...');
+    console.log("🔄 Initializing events list...");
 
     try {
       const userEvents = await this.getUserEvents();
       if (!userEvents) {
-        console.log('❌ No response from API');
+        console.log("❌ No response from API");
         this.createFallbackUI();
         return;
       }
 
       if (!userEvents.events) {
-        console.log('❌ No events array in response:', userEvents);
+        console.log("❌ No events array in response:", userEvents);
         this.createFallbackUI();
         return;
       }
 
-      const allEvents = userEvents.events.map(item => {
-        const event = item.event || item;  // Handle nested event data structure
+      const allEvents = userEvents.events.map((item) => {
+        const event = item.event || item; // Handle nested event data structure
         return {
           ...event,
-          canScrape: event.show_guest_list === true && event.virtual_info?.has_access === true
+          canScrape: event.show_guest_list === true && event.virtual_info?.has_access === true,
         };
       });
 
       this.allEvents = allEvents;
       this.createEventsListUI(allEvents);
-
     } catch (error) {
-      console.error('❌ Error in initEventsList:', error);
+      console.error("❌ Error in initEventsList:", error);
       this.createFallbackUI();
     }
   }
 
   // Create events list UI
   createEventsListUI(events) {
-    const container = document.createElement('div');
-    container.id = 'luma-scraper-events-container';
+    const container = document.createElement("div");
+    container.id = "luma-scraper-events-container";
     container.innerHTML = `
       <div class="luma-scraper-header">
-        <h3>🎯 ${ContentLanguageManager.getText('title')}</h3>
+        <h3>🎯 ${ContentLanguageManager.getText("title")}</h3>
         <div class="luma-status">
-          ✅ ${ContentLanguageManager.getText('status.authenticated')} | ${ContentLanguageManager.getText('status.found')} ${events.filter(e => e.canScrape).length}/${events.length} ${ContentLanguageManager.getText('status.scrappable')}
+          ✅ ${ContentLanguageManager.getText("status.authenticated")} | ${ContentLanguageManager.getText("status.found")} ${events.filter((e) => e.canScrape).length}/${events.length} ${ContentLanguageManager.getText("status.scrappable")}
         </div>
         <div class="luma-cookie-status" style="font-size: 11px; opacity: 0.8;">
-          🍪 ${ContentLanguageManager.getText('status.cookieAuthorized')}
+          🍪 ${ContentLanguageManager.getText("status.cookieAuthorized")}
         </div>
       </div>
       <div class="luma-events-list" id="luma-events-list">
-        ${events.length === 0 ? `<div class="no-events">${ContentLanguageManager.getText('messages.noScrapableEvents')}</div>` : ''}
+        ${events.length === 0 ? `<div class="no-events">${ContentLanguageManager.getText("messages.noScrapableEvents")}</div>` : ""}
       </div>
     `;
 
-    const style = document.createElement('style');
+    const style = document.createElement("style");
     style.textContent = this.getUIStyles();
 
     document.head.appendChild(style);
@@ -485,7 +485,6 @@ class LumaDataScraper {
     this.addMinimizeButton(container);
     this.populateEventsList(events);
   }
-
 
   // Get UI styles
   getUIStyles() {
@@ -707,22 +706,22 @@ class LumaDataScraper {
 
   // Add minimize button and drag functionality
   addMinimizeButton(container) {
-    const minimizeBtn = document.createElement('button');
-    minimizeBtn.className = 'luma-minimize-btn';
-    minimizeBtn.textContent = '−';
-    minimizeBtn.addEventListener('click', () => {
-      container.classList.toggle('minimized');
-      minimizeBtn.textContent = container.classList.contains('minimized') ? '+' : '−';
+    const minimizeBtn = document.createElement("button");
+    minimizeBtn.className = "luma-minimize-btn";
+    minimizeBtn.textContent = "−";
+    minimizeBtn.addEventListener("click", () => {
+      container.classList.toggle("minimized");
+      minimizeBtn.textContent = container.classList.contains("minimized") ? "+" : "−";
     });
-    container.querySelector('.luma-scraper-header').appendChild(minimizeBtn);
-    
+    container.querySelector(".luma-scraper-header").appendChild(minimizeBtn);
+
     // Add drag functionality
     this.addDragFunctionality(container);
   }
 
   // Add drag functionality to container
   addDragFunctionality(container) {
-    const header = container.querySelector('.luma-scraper-header');
+    const header = container.querySelector(".luma-scraper-header");
     let isDragging = false;
     let currentX = 0;
     let currentY = 0;
@@ -732,7 +731,7 @@ class LumaDataScraper {
     let yOffset = 0;
 
     // Try to restore previous position from localStorage
-    const savedPosition = localStorage.getItem('luma-scraper-position');
+    const savedPosition = localStorage.getItem("luma-scraper-position");
     if (savedPosition) {
       const { x, y } = JSON.parse(savedPosition);
       xOffset = x;
@@ -743,24 +742,24 @@ class LumaDataScraper {
     }
 
     const savePosition = () => {
-      localStorage.setItem('luma-scraper-position', JSON.stringify({ x: currentX, y: currentY }));
+      localStorage.setItem("luma-scraper-position", JSON.stringify({ x: currentX, y: currentY }));
     };
 
     const dragStart = (e) => {
-      if (e.target.classList.contains('luma-minimize-btn')) {
+      if (e.target.classList.contains("luma-minimize-btn")) {
         return; // Don't drag when clicking minimize button
       }
-      
-      const clientX = e.type === 'mousedown' ? e.clientX : e.touches[0].clientX;
-      const clientY = e.type === 'mousedown' ? e.clientY : e.touches[0].clientY;
+
+      const clientX = e.type === "mousedown" ? e.clientX : e.touches[0].clientX;
+      const clientY = e.type === "mousedown" ? e.clientY : e.touches[0].clientY;
 
       initialX = clientX - xOffset;
       initialY = clientY - yOffset;
 
       if (e.target === header || header.contains(e.target)) {
         isDragging = true;
-        container.style.transition = 'none';
-        container.style.userSelect = 'none';
+        container.style.transition = "none";
+        container.style.userSelect = "none";
       }
     };
 
@@ -769,8 +768,8 @@ class LumaDataScraper {
         initialX = currentX;
         initialY = currentY;
         isDragging = false;
-        container.style.transition = '';
-        container.style.userSelect = '';
+        container.style.transition = "";
+        container.style.userSelect = "";
         savePosition();
       }
     };
@@ -778,9 +777,9 @@ class LumaDataScraper {
     const drag = (e) => {
       if (isDragging) {
         e.preventDefault();
-        
-        const clientX = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
-        const clientY = e.type === 'mousemove' ? e.clientY : e.touches[0].clientY;
+
+        const clientX = e.type === "mousemove" ? e.clientX : e.touches[0].clientX;
+        const clientY = e.type === "mousemove" ? e.clientY : e.touches[0].clientY;
 
         currentX = clientX - initialX;
         currentY = clientY - initialY;
@@ -792,7 +791,7 @@ class LumaDataScraper {
         const rect = container.getBoundingClientRect();
         const maxX = window.innerWidth - rect.width;
         const maxY = window.innerHeight - rect.height;
-        
+
         currentX = Math.max(0, Math.min(currentX, maxX));
         currentY = Math.max(0, Math.min(currentY, maxY));
 
@@ -801,39 +800,40 @@ class LumaDataScraper {
     };
 
     // Mouse events
-    header.addEventListener('mousedown', dragStart);
-    document.addEventListener('mousemove', drag);
-    document.addEventListener('mouseup', dragEnd);
+    header.addEventListener("mousedown", dragStart);
+    document.addEventListener("mousemove", drag);
+    document.addEventListener("mouseup", dragEnd);
 
     // Touch events for mobile
-    header.addEventListener('touchstart', dragStart, { passive: false });
-    document.addEventListener('touchmove', drag, { passive: false });
-    document.addEventListener('touchend', dragEnd);
+    header.addEventListener("touchstart", dragStart, { passive: false });
+    document.addEventListener("touchmove", drag, { passive: false });
+    document.addEventListener("touchend", dragEnd);
 
     // Prevent text selection during drag
-    header.addEventListener('selectstart', (e) => {
+    header.addEventListener("selectstart", (e) => {
       if (isDragging) e.preventDefault();
     });
   }
 
   // Populate events list
   populateEventsList(events) {
-    const listContainer = document.getElementById('luma-events-list');
+    const listContainer = document.getElementById("luma-events-list");
 
-    events.forEach(event => {
-      const eventItem = document.createElement('div');
-      eventItem.className = 'luma-event-item';
+    events.forEach((event) => {
+      const eventItem = document.createElement("div");
+      eventItem.className = "luma-event-item";
 
       const startDate = new Date(event.start_at).toLocaleString();
-      const location = event.location_type === 'offline'
-        ? event.geo_address_info?.city || ContentLanguageManager.getText('events.offline')
-        : event.location_type;
+      const location =
+        event.location_type === "offline"
+          ? event.geo_address_info?.city || ContentLanguageManager.getText("events.offline")
+          : event.location_type;
 
       const accessStatus = event.canScrape
-        ? `✅ ${ContentLanguageManager.getText('events.guestListVisible')} | 🔑 ${ContentLanguageManager.getText('events.hasAccess')}`
+        ? `✅ ${ContentLanguageManager.getText("events.guestListVisible")} | 🔑 ${ContentLanguageManager.getText("events.hasAccess")}`
         : event.show_guest_list
-          ? `✅ ${ContentLanguageManager.getText('events.guestListVisible')} | ❌ ${ContentLanguageManager.getText('events.noAccess')}`
-          : `❌ ${ContentLanguageManager.getText('events.guestListHidden')}`;
+          ? `✅ ${ContentLanguageManager.getText("events.guestListVisible")} | ❌ ${ContentLanguageManager.getText("events.noAccess")}`
+          : `❌ ${ContentLanguageManager.getText("events.guestListHidden")}`;
 
       eventItem.innerHTML = `
         <div class="luma-event-name">${event.name}</div>
@@ -842,51 +842,55 @@ class LumaDataScraper {
           📍 ${location}<br>
           🎫 ${event.visibility} | <span class="event-access-text">${accessStatus}</span>
         </div>
-        ${event.canScrape ? `
+        ${
+          event.canScrape
+            ? `
         <div class="luma-event-actions">
           <div class="luma-btn-row">
             <button class="luma-btn luma-btn-primary scrape-auto-btn" data-event-id="${event.api_id}" data-mode="auto">
-              ${ContentLanguageManager.getText('buttons.autoScrape')}
+              ${ContentLanguageManager.getText("buttons.autoScrape")}
             </button>
             <button class="luma-btn luma-btn-success scrape-manual-btn" data-event-id="${event.api_id}" data-mode="manual">
-              ${ContentLanguageManager.getText('buttons.manualScrape')}
+              ${ContentLanguageManager.getText("buttons.manualScrape")}
             </button>
           </div>
           <div class="luma-btn-row" style="margin-top: 8px;">
             <button class="luma-btn luma-btn-warning view-btn" data-event-id="${event.api_id}">
-              ${ContentLanguageManager.getText('buttons.viewDetails')}
+              ${ContentLanguageManager.getText("buttons.viewDetails")}
             </button>
             <button class="luma-btn luma-btn-danger stop-btn" data-event-id="${event.api_id}" style="display: none;">
-              ${ContentLanguageManager.getText('buttons.stop')}
+              ${ContentLanguageManager.getText("buttons.stop")}
             </button>
           </div>
           <div class="luma-manual-controls" style="display: none;">
             <div class="luma-btn-row" style="margin-top: 8px;">
               <button class="luma-btn luma-btn-success next-page-btn" data-event-id="${event.api_id}">
-                ${ContentLanguageManager.getText('buttons.nextPage')}
+                ${ContentLanguageManager.getText("buttons.nextPage")}
               </button>
             </div>
           </div>
         </div>
-        ` : `
+        `
+            : `
         <div class="luma-event-actions">
           <div class="luma-btn-row">
             <button class="luma-btn luma-btn-disabled" disabled>
-              ${ContentLanguageManager.getText('events.noAccess')}
+              ${ContentLanguageManager.getText("events.noAccess")}
             </button>
             <button class="luma-btn luma-btn-warning view-btn" data-event-id="${event.api_id}">
-              ${ContentLanguageManager.getText('buttons.viewDetails')}
+              ${ContentLanguageManager.getText("buttons.viewDetails")}
             </button>
           </div>
         </div>
-        `}
+        `
+        }
         <div class="luma-progress" id="progress-${event.api_id}">
-          <div class="progress-text">${ContentLanguageManager.getText('messages.ready')}</div>
+          <div class="progress-text">${ContentLanguageManager.getText("messages.ready")}</div>
           <div class="luma-progress-bar">
             <div class="luma-progress-fill"></div>
           </div>
           <div class="progress-stats" style="font-size: 11px; margin-top: 4px; color: #666;">
-            ${ContentLanguageManager.getText('messages.page')}: <span class="page-count">0</span> | ${ContentLanguageManager.getText('messages.items')}: <span class="data-count">0</span>
+            ${ContentLanguageManager.getText("messages.page")}: <span class="page-count">0</span> | ${ContentLanguageManager.getText("messages.items")}: <span class="data-count">0</span>
           </div>
         </div>
       `;
@@ -898,74 +902,74 @@ class LumaDataScraper {
 
   // Bind event handlers
   bindEventHandlers(eventItem, event) {
-    const scrapeAutoBtn = eventItem.querySelector('.scrape-auto-btn');
-    const scrapeManualBtn = eventItem.querySelector('.scrape-manual-btn');
-    const viewBtn = eventItem.querySelector('.view-btn');
-    const nextPageBtn = eventItem.querySelector('.next-page-btn');
-    const stopBtn = eventItem.querySelector('.stop-btn');
+    const scrapeAutoBtn = eventItem.querySelector(".scrape-auto-btn");
+    const scrapeManualBtn = eventItem.querySelector(".scrape-manual-btn");
+    const viewBtn = eventItem.querySelector(".view-btn");
+    const nextPageBtn = eventItem.querySelector(".next-page-btn");
+    const stopBtn = eventItem.querySelector(".stop-btn");
 
     // Auto scrape button
     if (scrapeAutoBtn) {
-      scrapeAutoBtn.addEventListener('click', () => {
-        this.startEventScraping(event.api_id, eventItem, 'auto');
+      scrapeAutoBtn.addEventListener("click", () => {
+        this.startEventScraping(event.api_id, eventItem, "auto");
       });
     }
 
     // Manual scrape button
     if (scrapeManualBtn) {
-      scrapeManualBtn.addEventListener('click', () => {
-        this.startEventScraping(event.api_id, eventItem, 'manual');
+      scrapeManualBtn.addEventListener("click", () => {
+        this.startEventScraping(event.api_id, eventItem, "manual");
       });
     }
 
     // View details button
     if (viewBtn) {
-      viewBtn.addEventListener('click', () => {
+      viewBtn.addEventListener("click", () => {
         this.showEventDetails(event);
       });
     }
 
     // Next page button
     if (nextPageBtn) {
-      nextPageBtn.addEventListener('click', () => {
+      nextPageBtn.addEventListener("click", () => {
         this.manualNextPage(event.api_id, eventItem);
       });
     }
 
     // Stop scraping button
     if (stopBtn) {
-      stopBtn.addEventListener('click', () => {
+      stopBtn.addEventListener("click", () => {
         this.stopScraping(event.api_id, eventItem);
       });
     }
   }
 
   // Start event scraping
-  async startEventScraping(eventApiId, eventElement, mode = 'auto') {
+  async startEventScraping(eventApiId, eventElement, mode = "auto") {
     console.log(`🚀 Starting to scrape event ${eventApiId}, mode: ${mode}`);
 
     try {
       // Check Cookie consent status
       if (!this.cookieConsent) {
-        console.log('⚠️ Cookie permission required to scrape, please authorize in plugin popup');
-        throw new Error('Cookie permission required to scrape, please authorize in plugin popup');
+        console.log("⚠️ Cookie permission required to scrape, please authorize in plugin popup");
+        throw new Error("Cookie permission required to scrape, please authorize in plugin popup");
       }
 
       if (!this.extensionValid) {
-        throw new Error('Extension context invalidated');
+        throw new Error("Extension context invalidated");
       }
 
       // Re-validate Cookie permissions
       const cookieSuccess = await this.getCookies();
       if (!cookieSuccess) {
-        throw new Error('Cookie permission validation failed');
+        throw new Error("Cookie permission validation failed");
       }
 
-      const progressEl = eventElement.querySelector('.luma-progress');
-      const scrapeAutoBtn = eventElement.querySelector('.scrape-auto-btn');
-      const scrapeManualBtn = eventElement.querySelector('.scrape-manual-btn');
-      const stopBtn = eventElement.querySelector('.stop-btn');
-      const manualControls = eventElement.querySelector('.luma-manual-controls');
+      const progressEl = eventElement.querySelector(".luma-progress");
+      const scrapeAutoBtn = eventElement.querySelector(".scrape-auto-btn");
+      const scrapeManualBtn = eventElement.querySelector(".scrape-manual-btn");
+      const stopBtn = eventElement.querySelector(".stop-btn");
+      const manualControls = eventElement.querySelector(".luma-manual-controls");
 
       // Get independent event status
       const eventState = this.getEventState(eventApiId, eventElement);
@@ -975,56 +979,61 @@ class LumaDataScraper {
       eventState.isRunning = true;
       eventState.cursor = null;
 
-      progressEl.classList.add('active');
+      progressEl.classList.add("active");
 
       // Disable scrape buttons, show stop button
       if (scrapeAutoBtn) {
         scrapeAutoBtn.disabled = true;
-        scrapeAutoBtn.textContent = mode === 'auto' ? ContentLanguageManager.getText('buttons.scraping') : ContentLanguageManager.getText('buttons.autoScrape');
+        scrapeAutoBtn.textContent =
+          mode === "auto"
+            ? ContentLanguageManager.getText("buttons.scraping")
+            : ContentLanguageManager.getText("buttons.autoScrape");
       }
       if (scrapeManualBtn) {
         scrapeManualBtn.disabled = true;
-        scrapeManualBtn.textContent = mode === 'manual' ? ContentLanguageManager.getText('buttons.scraping') : ContentLanguageManager.getText('buttons.manualScrape');
+        scrapeManualBtn.textContent =
+          mode === "manual"
+            ? ContentLanguageManager.getText("buttons.scraping")
+            : ContentLanguageManager.getText("buttons.manualScrape");
       }
 
-      stopBtn.style.display = 'inline-block';
+      stopBtn.style.display = "inline-block";
 
-      if (mode === 'manual') {
-        manualControls.style.display = 'block';
+      if (mode === "manual") {
+        manualControls.style.display = "block";
       }
 
       await this.fetchNextPage(eventApiId);
-
     } catch (error) {
-      console.error('Event scraping failed:', error);
+      console.error("Event scraping failed:", error);
 
-      const progressText = eventElement.querySelector('.progress-text');
-      const scrapeAutoBtn = eventElement.querySelector('.scrape-auto-btn');
-      const scrapeManualBtn = eventElement.querySelector('.scrape-manual-btn');
-      const stopBtn = eventElement.querySelector('.stop-btn');
+      const progressText = eventElement.querySelector(".progress-text");
+      const scrapeAutoBtn = eventElement.querySelector(".scrape-auto-btn");
+      const scrapeManualBtn = eventElement.querySelector(".scrape-manual-btn");
+      const stopBtn = eventElement.querySelector(".stop-btn");
 
       if (progressText) {
-        progressText.textContent = `${ContentLanguageManager.getText('messages.failed')}: ${error.message}`;
+        progressText.textContent = `${ContentLanguageManager.getText("messages.failed")}: ${error.message}`;
       }
 
       // Reset button status
       if (scrapeAutoBtn) {
-        scrapeAutoBtn.textContent = ContentLanguageManager.getText('buttons.autoScrape');
+        scrapeAutoBtn.textContent = ContentLanguageManager.getText("buttons.autoScrape");
         scrapeAutoBtn.disabled = false;
-        scrapeAutoBtn.style.background = '#dc3545';
+        scrapeAutoBtn.style.background = "#dc3545";
       }
       if (scrapeManualBtn) {
-        scrapeManualBtn.textContent = ContentLanguageManager.getText('buttons.manualScrape');
+        scrapeManualBtn.textContent = ContentLanguageManager.getText("buttons.manualScrape");
         scrapeManualBtn.disabled = false;
-        scrapeManualBtn.style.background = '#dc3545';
+        scrapeManualBtn.style.background = "#dc3545";
       }
       if (stopBtn) {
-        stopBtn.style.display = 'none';
+        stopBtn.style.display = "none";
       }
 
       this.isRunning = false;
 
-      if (error.message.includes('Extension')) {
+      if (error.message.includes("Extension")) {
         this.showExtensionError();
       }
     }
@@ -1035,33 +1044,33 @@ class LumaDataScraper {
     const eventState = this.getEventState(eventId);
 
     if (!eventState.isRunning) {
-      console.log('❌ Scraping has been stopped');
+      console.log("❌ Scraping has been stopped");
       return;
     }
 
     if (!this.authValue || !this.cookieHeader) {
-      console.log('❌ Authentication failed');
+      console.log("❌ Authentication failed");
       const cookieSuccess = await this.getCookies();
       if (!cookieSuccess) {
-        console.log('❌ Cookie re-retrieval failed, stopping scrape');
+        console.log("❌ Cookie re-retrieval failed, stopping scrape");
         this.stopScraping(eventId, eventState.eventElement);
         return;
       }
-      console.log('✅ Cookie re-retrieval successful, continuing scrape');
+      console.log("✅ Cookie re-retrieval successful, continuing scrape");
     }
 
     if (!eventId) {
-      console.log('❌ Invalid event ID');
+      console.log("❌ Invalid event ID");
       return;
     }
 
-    const progressText = eventState.eventElement.querySelector('.progress-text');
-    const progressFill = eventState.eventElement.querySelector('.luma-progress-fill');
-    const pageCountEl = eventState.eventElement.querySelector('.page-count');
-    const dataCountEl = eventState.eventElement.querySelector('.data-count');
+    const progressText = eventState.eventElement.querySelector(".progress-text");
+    const progressFill = eventState.eventElement.querySelector(".luma-progress-fill");
+    const pageCountEl = eventState.eventElement.querySelector(".page-count");
+    const dataCountEl = eventState.eventElement.querySelector(".data-count");
 
     eventState.page++;
-    progressText.textContent = `${ContentLanguageManager.getText('messages.page')} ${eventState.page}...`;
+    progressText.textContent = `${ContentLanguageManager.getText("messages.page")} ${eventState.page}...`;
 
     try {
       const baseUrl = "https://api2.luma.com/event/get-guest-list";
@@ -1074,22 +1083,22 @@ class LumaDataScraper {
       }
 
       const headers = {
-        'accept': 'application/json',
-        'accept-language': 'zh',
-        'cookie': this.cookieHeader,
-        'origin': 'https://luma.com',
-        'referer': 'https://luma.com/',
-        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
-        'x-luma-client-type': 'luma-web',
-        'x-luma-web-url': 'https://luma.com/home'
+        accept: "application/json",
+        "accept-language": "zh",
+        cookie: this.cookieHeader,
+        origin: "https://luma.com",
+        referer: "https://luma.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+        "x-luma-client-type": "luma-web",
+        "x-luma-web-url": "https://luma.com/home",
       };
 
       console.log(`📡 API call: ${url.toString()}`);
 
       const response = await fetch(url.toString(), {
-        method: 'GET',
+        method: "GET",
         headers: headers,
-        credentials: 'include'
+        credentials: "include",
       });
 
       if (!response.ok) {
@@ -1111,82 +1120,85 @@ class LumaDataScraper {
       }
 
       if (rawEntries.length > 0) {
-        pageVisitors = rawEntries.map(entry => {
-          const user = entry.user || entry.guest || entry;
+        pageVisitors = rawEntries
+          .map((entry) => {
+            const user = entry.user || entry.guest || entry;
 
-          if (!user || !user.api_id) {
-            return null;
-          }
+            if (!user || !user.api_id) {
+              return null;
+            }
 
-          return {
-            api_id: user.api_id,
-            event_api_id: eventState.eventId,
-            name: user.name,
-            username: user.username,
-            website: user.website,
-            timezone: user.timezone,
-            bio_short: user.bio_short,
-            avatar_url: user.avatar_url,
-            is_verified: user.is_verified,
-            last_online_at: user.last_online_at,
-            twitter_handle: user.twitter_handle,
-            youtube_handle: user.youtube_handle,
-            linkedin_handle: user.linkedin_handle,
-            instagram_handle: user.instagram_handle,
-            created_at: entry.created_at || user.created_at,
-            updated_at: entry.updated_at || user.updated_at
-          };
-        }).filter(v => v !== null);
+            return {
+              api_id: user.api_id,
+              event_api_id: eventState.eventId,
+              name: user.name,
+              username: user.username,
+              website: user.website,
+              timezone: user.timezone,
+              bio_short: user.bio_short,
+              avatar_url: user.avatar_url,
+              is_verified: user.is_verified,
+              last_online_at: user.last_online_at,
+              twitter_handle: user.twitter_handle,
+              youtube_handle: user.youtube_handle,
+              linkedin_handle: user.linkedin_handle,
+              instagram_handle: user.instagram_handle,
+              created_at: entry.created_at || user.created_at,
+              updated_at: entry.updated_at || user.updated_at,
+            };
+          })
+          .filter((v) => v !== null);
       }
 
       // Add deduplication logic, deduplicate by api_id
-      const existingIds = new Set(eventState.totalVisitors.map(v => v.api_id));
-      const newVisitors = pageVisitors.filter(v => !existingIds.has(v.api_id));
+      const existingIds = new Set(eventState.totalVisitors.map((v) => v.api_id));
+      const newVisitors = pageVisitors.filter((v) => !existingIds.has(v.api_id));
       eventState.totalVisitors = [...eventState.totalVisitors, ...newVisitors];
 
       pageCountEl.textContent = eventState.page;
       dataCountEl.textContent = eventState.totalVisitors.length;
-      progressText.textContent = `${ContentLanguageManager.getText('messages.page')} ${eventState.page} ${ContentLanguageManager.getText('messages.completed')}, ${newVisitors.length} ${ContentLanguageManager.getText('messages.newData')} ${ContentLanguageManager.getText('messages.deduped')}`;
-      progressFill.style.width = Math.min((eventState.page / 10) * 100, 90) + '%';
+      progressText.textContent = `${ContentLanguageManager.getText("messages.page")} ${eventState.page} ${ContentLanguageManager.getText("messages.completed")}, ${newVisitors.length} ${ContentLanguageManager.getText("messages.newData")} ${ContentLanguageManager.getText("messages.deduped")}`;
+      progressFill.style.width = Math.min((eventState.page / 10) * 100, 90) + "%";
 
-      console.log(`✅ Page ${eventState.page} completed, ${pageVisitors.length} items on this page, ${newVisitors.length} new items, ${eventState.totalVisitors.length} total`);
+      console.log(
+        `✅ Page ${eventState.page} completed, ${pageVisitors.length} items on this page, ${newVisitors.length} new items, ${eventState.totalVisitors.length} total`,
+      );
 
       eventState.cursor = data.next_cursor || data.pagination_cursor || data.cursor;
       const hasMore = !!eventState.cursor && pageVisitors.length > 0;
 
-      if (hasMore && eventState.mode === 'auto') {
+      if (hasMore && eventState.mode === "auto") {
         const delay = Math.floor(Math.random() * 3000) + 3000; // 3-6 second random delay
-        progressText.textContent = `${ContentLanguageManager.getText('messages.waitingSeconds')} ${Math.ceil(delay / 1000)} ${ContentLanguageManager.getText('messages.secondsAndContinue')}`;
+        progressText.textContent = `${ContentLanguageManager.getText("messages.waitingSeconds")} ${Math.ceil(delay / 1000)} ${ContentLanguageManager.getText("messages.secondsAndContinue")}`;
 
         setTimeout(() => {
           this.fetchNextPage(eventId);
         }, delay);
-      } else if (hasMore && eventState.mode === 'manual') {
-        progressText.textContent = `${ContentLanguageManager.getText('messages.page')} ${eventState.page} ${ContentLanguageManager.getText('messages.completed')}, click '${ContentLanguageManager.getText('buttons.nextPage')}' to continue`;
-        const nextBtn = eventState.eventElement.querySelector('.next-page-btn');
+      } else if (hasMore && eventState.mode === "manual") {
+        progressText.textContent = `${ContentLanguageManager.getText("messages.page")} ${eventState.page} ${ContentLanguageManager.getText("messages.completed")}, click '${ContentLanguageManager.getText("buttons.nextPage")}' to continue`;
+        const nextBtn = eventState.eventElement.querySelector(".next-page-btn");
         nextBtn.disabled = false;
-        nextBtn.textContent = ContentLanguageManager.getText('buttons.nextPage');
+        nextBtn.textContent = ContentLanguageManager.getText("buttons.nextPage");
       } else {
         await this.completeScraping(eventId);
       }
-
     } catch (error) {
       console.error(`❌ Page ${eventState.page} scraping failed:`, error);
-      progressText.textContent = `${ContentLanguageManager.getText('messages.page')} ${eventState.page} ${ContentLanguageManager.getText('messages.failed')}: ${error.message}`;
+      progressText.textContent = `${ContentLanguageManager.getText("messages.page")} ${eventState.page} ${ContentLanguageManager.getText("messages.failed")}: ${error.message}`;
 
-      if (eventState.mode === 'manual') {
-        const nextBtn = eventState.eventElement.querySelector('.next-page-btn');
+      if (eventState.mode === "manual") {
+        const nextBtn = eventState.eventElement.querySelector(".next-page-btn");
         nextBtn.disabled = false;
-        nextBtn.textContent = ContentLanguageManager.getText('buttons.retry');
+        nextBtn.textContent = ContentLanguageManager.getText("buttons.retry");
       }
     }
   }
 
   // Manual next page
   async manualNextPage(eventApiId, eventElement) {
-    const nextBtn = eventElement.querySelector('.next-page-btn');
+    const nextBtn = eventElement.querySelector(".next-page-btn");
     nextBtn.disabled = true;
-    nextBtn.textContent = ContentLanguageManager.getText('buttons.scraping');
+    nextBtn.textContent = ContentLanguageManager.getText("buttons.scraping");
 
     await this.fetchNextPage(eventApiId);
   }
@@ -1199,40 +1211,40 @@ class LumaDataScraper {
     eventState.isRunning = false;
 
     if (!eventElement) {
-      console.log('⚠️ eventElement is empty, cannot update UI');
+      console.log("⚠️ eventElement is empty, cannot update UI");
       return;
     }
 
-    const progressText = eventElement.querySelector('.progress-text');
-    const scrapeAutoBtn = eventElement.querySelector('.scrape-auto-btn');
-    const scrapeManualBtn = eventElement.querySelector('.scrape-manual-btn');
-    const stopBtn = eventElement.querySelector('.stop-btn');
-    const manualControls = eventElement.querySelector('.luma-manual-controls');
+    const progressText = eventElement.querySelector(".progress-text");
+    const scrapeAutoBtn = eventElement.querySelector(".scrape-auto-btn");
+    const scrapeManualBtn = eventElement.querySelector(".scrape-manual-btn");
+    const stopBtn = eventElement.querySelector(".stop-btn");
+    const manualControls = eventElement.querySelector(".luma-manual-controls");
 
     if (progressText) {
-      progressText.textContent = `${ContentLanguageManager.getText('messages.stopped')} (${ContentLanguageManager.getText('messages.scraped')} ${eventState.totalVisitors ? eventState.totalVisitors.length : 0} ${ContentLanguageManager.getText('messages.items')})`;
+      progressText.textContent = `${ContentLanguageManager.getText("messages.stopped")} (${ContentLanguageManager.getText("messages.scraped")} ${eventState.totalVisitors ? eventState.totalVisitors.length : 0} ${ContentLanguageManager.getText("messages.items")})`;
     }
 
     // Reset button status and add reset button
     if (scrapeAutoBtn) {
-      scrapeAutoBtn.textContent = ContentLanguageManager.getText('buttons.autoScrape');
+      scrapeAutoBtn.textContent = ContentLanguageManager.getText("buttons.autoScrape");
       scrapeAutoBtn.disabled = true;
-      scrapeAutoBtn.style.background = '#6c757d';
+      scrapeAutoBtn.style.background = "#6c757d";
     }
     if (scrapeManualBtn) {
-      scrapeManualBtn.textContent = ContentLanguageManager.getText('buttons.manualScrape');
+      scrapeManualBtn.textContent = ContentLanguageManager.getText("buttons.manualScrape");
       scrapeManualBtn.disabled = true;
-      scrapeManualBtn.style.background = '#6c757d';
+      scrapeManualBtn.style.background = "#6c757d";
     }
     if (stopBtn) {
-      stopBtn.style.display = 'none';
+      stopBtn.style.display = "none";
     }
 
     // Add reset button
     this.addResetButton(eventElement, eventApiId);
 
     if (manualControls) {
-      manualControls.style.display = 'none';
+      manualControls.style.display = "none";
     }
 
     if (eventState.totalVisitors && eventState.totalVisitors.length > 0) {
@@ -1245,67 +1257,70 @@ class LumaDataScraper {
     const eventState = this.getEventState(eventId);
     console.log(`🎉 Scraping completed! Got ${eventState.totalVisitors.length} guest data items`);
 
-    const progressText = eventState.eventElement.querySelector('.progress-text');
-    const progressFill = eventState.eventElement.querySelector('.luma-progress-fill');
-    const scrapeAutoBtn = eventState.eventElement.querySelector('.scrape-auto-btn');
-    const scrapeManualBtn = eventState.eventElement.querySelector('.scrape-manual-btn');
-    const stopBtn = eventState.eventElement.querySelector('.stop-btn');
-    const manualControls = eventState.eventElement.querySelector('.luma-manual-controls');
+    const progressText = eventState.eventElement.querySelector(".progress-text");
+    const progressFill = eventState.eventElement.querySelector(".luma-progress-fill");
+    const scrapeAutoBtn = eventState.eventElement.querySelector(".scrape-auto-btn");
+    const scrapeManualBtn = eventState.eventElement.querySelector(".scrape-manual-btn");
+    const stopBtn = eventState.eventElement.querySelector(".stop-btn");
+    const manualControls = eventState.eventElement.querySelector(".luma-manual-controls");
 
-    progressText.textContent = `${ContentLanguageManager.getText('messages.completed')}! ${ContentLanguageManager.getText('messages.total')} ${eventState.totalVisitors.length} ${ContentLanguageManager.getText('messages.items')}`;
-    progressFill.style.width = '100%';
+    progressText.textContent = `${ContentLanguageManager.getText("messages.completed")}! ${ContentLanguageManager.getText("messages.total")} ${eventState.totalVisitors.length} ${ContentLanguageManager.getText("messages.items")}`;
+    progressFill.style.width = "100%";
 
     // Update button status
     if (scrapeAutoBtn) {
-      scrapeAutoBtn.textContent = ContentLanguageManager.getText('buttons.completed');
-      scrapeAutoBtn.style.background = '#28a745';
+      scrapeAutoBtn.textContent = ContentLanguageManager.getText("buttons.completed");
+      scrapeAutoBtn.style.background = "#28a745";
       scrapeAutoBtn.disabled = true;
     }
     if (scrapeManualBtn) {
-      scrapeManualBtn.textContent = ContentLanguageManager.getText('buttons.completed');
-      scrapeManualBtn.style.background = '#28a745';
+      scrapeManualBtn.textContent = ContentLanguageManager.getText("buttons.completed");
+      scrapeManualBtn.style.background = "#28a745";
       scrapeManualBtn.disabled = true;
     }
     if (stopBtn) {
-      stopBtn.style.display = 'none';
+      stopBtn.style.display = "none";
     }
-    manualControls.style.display = 'none';
+    manualControls.style.display = "none";
 
     eventState.isRunning = false;
 
     if (eventState.totalVisitors.length > 0) {
       try {
         if (!this.extensionValid) {
-          throw new Error('Extension context invalidated, cannot save to extension storage');
+          throw new Error("Extension context invalidated, cannot save to extension storage");
         }
 
         await this.safeChromeMessage({
-          action: 'saveData',
+          action: "saveData",
           data: {
-            source: 'api',
+            source: "api",
             event_api_id: eventState.eventId,
             data: eventState.totalVisitors,
             timestamp: Date.now(),
             url: window.location.href,
             total_visitors: eventState.totalVisitors.length,
             pages_scraped: eventState.page,
-            mode: eventState.mode
-          }
+            mode: eventState.mode,
+          },
         });
 
-        console.log('✅ Data saved to local storage');
+        console.log("✅ Data saved to local storage");
         this.addExportButton(eventState.eventElement, eventState.totalVisitors, eventState.eventId);
         this.addResetButton(eventState.eventElement, eventState.eventId);
-
       } catch (error) {
-        console.error('❌ Save data failed:', error);
+        console.error("❌ Save data failed:", error);
 
-        if (error.message.includes('Extension')) {
-          progressText.textContent = `${ContentLanguageManager.getText('messages.completed')}! ${ContentLanguageManager.getText('messages.extensionStorageInvalid')}`;
-          this.addExportButton(eventState.eventElement, eventState.totalVisitors, eventState.eventId);
+        if (error.message.includes("Extension")) {
+          progressText.textContent = `${ContentLanguageManager.getText("messages.completed")}! ${ContentLanguageManager.getText("messages.extensionStorageInvalid")}`;
+          this.addExportButton(
+            eventState.eventElement,
+            eventState.totalVisitors,
+            eventState.eventId,
+          );
           this.addResetButton(eventState.eventElement, eventState.eventId);
         } else {
-          progressText.textContent = `${ContentLanguageManager.getText('messages.completed')} but save ${ContentLanguageManager.getText('messages.failed')}: ${error.message}`;
+          progressText.textContent = `${ContentLanguageManager.getText("messages.completed")} but save ${ContentLanguageManager.getText("messages.failed")}: ${error.message}`;
         }
       }
     }
@@ -1313,19 +1328,19 @@ class LumaDataScraper {
 
   // Add export button
   addExportButton(eventElement, visitors, eventId) {
-    const actionsRow = eventElement.querySelector('.luma-btn-row');
+    const actionsRow = eventElement.querySelector(".luma-btn-row");
 
-    if (actionsRow.querySelector('.export-btn')) {
+    if (actionsRow.querySelector(".export-btn")) {
       return;
     }
 
-    const exportBtn = document.createElement('button');
-    exportBtn.className = 'luma-btn luma-btn-success export-btn';
-    exportBtn.textContent = `${ContentLanguageManager.getText('buttons.export')} (${visitors.length}${ContentLanguageManager.getText('messages.items')})`;
-    exportBtn.style.marginTop = '8px';
-    exportBtn.style.width = '100%';
+    const exportBtn = document.createElement("button");
+    exportBtn.className = "luma-btn luma-btn-success export-btn";
+    exportBtn.textContent = `${ContentLanguageManager.getText("buttons.export")} (${visitors.length}${ContentLanguageManager.getText("messages.items")})`;
+    exportBtn.style.marginTop = "8px";
+    exportBtn.style.width = "100%";
 
-    exportBtn.addEventListener('click', () => {
+    exportBtn.addEventListener("click", () => {
       this.exportToCSV(visitors, eventId);
     });
 
@@ -1334,16 +1349,16 @@ class LumaDataScraper {
 
   // Add reset button
   addResetButton(eventElement, eventApiId) {
-    const actionsContainer = eventElement.querySelector('.luma-event-actions');
+    const actionsContainer = eventElement.querySelector(".luma-event-actions");
 
     // Check if reset button already exists
-    if (actionsContainer.querySelector('.reset-btn')) {
+    if (actionsContainer.querySelector(".reset-btn")) {
       return;
     }
 
-    const resetBtn = document.createElement('button');
-    resetBtn.className = 'luma-btn luma-btn-secondary reset-btn';
-    resetBtn.textContent = ContentLanguageManager.getText('buttons.reset');
+    const resetBtn = document.createElement("button");
+    resetBtn.className = "luma-btn luma-btn-secondary reset-btn";
+    resetBtn.textContent = ContentLanguageManager.getText("buttons.reset");
     resetBtn.style.cssText = `
       margin-top: 8px;
       width: 100%;
@@ -1351,7 +1366,7 @@ class LumaDataScraper {
       color: white;
     `;
 
-    resetBtn.addEventListener('click', () => {
+    resetBtn.addEventListener("click", () => {
       this.resetEventState(eventApiId, eventElement);
     });
 
@@ -1366,53 +1381,53 @@ class LumaDataScraper {
     this.clearEventState(eventApiId);
 
     // Reset UI elements
-    const progressEl = eventElement.querySelector('.luma-progress');
-    const progressText = eventElement.querySelector('.progress-text');
-    const progressFill = eventElement.querySelector('.luma-progress-fill');
-    const pageCountEl = eventElement.querySelector('.page-count');
-    const dataCountEl = eventElement.querySelector('.data-count');
-    const scrapeAutoBtn = eventElement.querySelector('.scrape-auto-btn');
-    const scrapeManualBtn = eventElement.querySelector('.scrape-manual-btn');
-    const stopBtn = eventElement.querySelector('.stop-btn');
-    const manualControls = eventElement.querySelector('.luma-manual-controls');
-    const resetBtn = eventElement.querySelector('.reset-btn');
-    const exportBtn = eventElement.querySelector('.export-btn');
+    const progressEl = eventElement.querySelector(".luma-progress");
+    const progressText = eventElement.querySelector(".progress-text");
+    const progressFill = eventElement.querySelector(".luma-progress-fill");
+    const pageCountEl = eventElement.querySelector(".page-count");
+    const dataCountEl = eventElement.querySelector(".data-count");
+    const scrapeAutoBtn = eventElement.querySelector(".scrape-auto-btn");
+    const scrapeManualBtn = eventElement.querySelector(".scrape-manual-btn");
+    const stopBtn = eventElement.querySelector(".stop-btn");
+    const manualControls = eventElement.querySelector(".luma-manual-controls");
+    const resetBtn = eventElement.querySelector(".reset-btn");
+    const exportBtn = eventElement.querySelector(".export-btn");
 
     // Hide progress bar
     if (progressEl) {
-      progressEl.classList.remove('active');
+      progressEl.classList.remove("active");
     }
 
     // Reset progress text and fill
     if (progressText) {
-      progressText.textContent = ContentLanguageManager.getText('messages.ready');
+      progressText.textContent = ContentLanguageManager.getText("messages.ready");
     }
     if (progressFill) {
-      progressFill.style.width = '0%';
+      progressFill.style.width = "0%";
     }
     if (pageCountEl) {
-      pageCountEl.textContent = '0';
+      pageCountEl.textContent = "0";
     }
     if (dataCountEl) {
-      dataCountEl.textContent = '0';
+      dataCountEl.textContent = "0";
     }
 
     // Reset button status
     if (scrapeAutoBtn) {
-      scrapeAutoBtn.textContent = ContentLanguageManager.getText('buttons.autoScrape');
+      scrapeAutoBtn.textContent = ContentLanguageManager.getText("buttons.autoScrape");
       scrapeAutoBtn.disabled = false;
-      scrapeAutoBtn.style.background = '';
+      scrapeAutoBtn.style.background = "";
     }
     if (scrapeManualBtn) {
-      scrapeManualBtn.textContent = ContentLanguageManager.getText('buttons.manualScrape');
+      scrapeManualBtn.textContent = ContentLanguageManager.getText("buttons.manualScrape");
       scrapeManualBtn.disabled = false;
-      scrapeManualBtn.style.background = '';
+      scrapeManualBtn.style.background = "";
     }
     if (stopBtn) {
-      stopBtn.style.display = 'none';
+      stopBtn.style.display = "none";
     }
     if (manualControls) {
-      manualControls.style.display = 'none';
+      manualControls.style.display = "none";
     }
 
     // Remove reset and export buttons
@@ -1423,100 +1438,118 @@ class LumaDataScraper {
       exportBtn.remove();
     }
 
-    console.log('✅ Event status reset to initial state');
+    console.log("✅ Event status reset to initial state");
   }
 
   // Export to CSV
   exportToCSV(visitors, eventId, eventName = null) {
     if (!visitors || visitors.length === 0) {
-      alert(ContentLanguageManager.getText('messages.noDataToExport'));
+      alert(ContentLanguageManager.getText("messages.noDataToExport"));
       return;
     }
 
     // If no event name provided, try to find from allEvents
     if (!eventName && this.allEvents) {
-      const event = this.allEvents.find(e => e.api_id === eventId);
+      const event = this.allEvents.find((e) => e.api_id === eventId);
       eventName = event ? event.name : null;
     }
 
     const headers = [
-      'name', 'username', 'api_id', 'website', 'timezone', 'bio_short',
-      'is_verified', 'last_online_at', 'twitter_handle', 'youtube_handle',
-      'linkedin_handle', 'instagram_handle', 'avatar_url', 'created_at', 'updated_at'
+      "name",
+      "username",
+      "api_id",
+      "website",
+      "timezone",
+      "bio_short",
+      "is_verified",
+      "last_online_at",
+      "twitter_handle",
+      "youtube_handle",
+      "linkedin_handle",
+      "instagram_handle",
+      "avatar_url",
+      "created_at",
+      "updated_at",
     ];
 
     const csvContent = [
-      headers.join(','),
-      ...visitors.map(visitor =>
-        headers.map(header => {
-          const value = visitor[header] || '';
-          if (value.toString().includes(',') || value.toString().includes('"')) {
-            return `"${value.toString().replace(/"/g, '""')}"`;
-          }
-          return value;
-        }).join(',')
-      )
-    ].join('\n');
+      headers.join(","),
+      ...visitors.map((visitor) =>
+        headers
+          .map((header) => {
+            const value = visitor[header] || "";
+            if (value.toString().includes(",") || value.toString().includes('"')) {
+              return `"${value.toString().replace(/"/g, '""')}"`;
+            }
+            return value;
+          })
+          .join(","),
+      ),
+    ].join("\n");
 
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
 
     // Generate filename
     const now = new Date();
-    const dateTime = now.getFullYear() +
-      String(now.getMonth() + 1).padStart(2, '0') +
-      String(now.getDate()).padStart(2, '0') + '_' +
-      String(now.getHours()).padStart(2, '0') +
-      String(now.getMinutes()).padStart(2, '0') +
-      String(now.getSeconds()).padStart(2, '0');
+    const dateTime =
+      now.getFullYear() +
+      String(now.getMonth() + 1).padStart(2, "0") +
+      String(now.getDate()).padStart(2, "0") +
+      "_" +
+      String(now.getHours()).padStart(2, "0") +
+      String(now.getMinutes()).padStart(2, "0") +
+      String(now.getSeconds()).padStart(2, "0");
 
     // Clean meeting name, remove characters unsuitable for filenames
     const cleanEventName = eventName
-      ? eventName.replace(/[<>:"/\\|?*]/g, '_').substring(0, 50)
-      : 'luma_event';
+      ? eventName.replace(/[<>:"/\\|?*]/g, "_").substring(0, 50)
+      : "luma_event";
 
     a.download = `${cleanEventName}_guest_${dateTime}.csv`;
     a.click();
     URL.revokeObjectURL(url);
 
-    console.log(`📁 CSV file downloaded: ${visitors.length} guest data items, filename: ${a.download}`);
+    console.log(
+      `📁 CSV file downloaded: ${visitors.length} guest data items, filename: ${a.download}`,
+    );
   }
 
   // Create fallback UI
   createFallbackUI() {
-    console.log('Creating fallback UI...');
+    console.log("Creating fallback UI...");
 
-    const container = document.createElement('div');
-    container.id = 'luma-scraper-events-container';
+    const container = document.createElement("div");
+    container.id = "luma-scraper-events-container";
     container.innerHTML = `
       <div class="luma-scraper-header">
-        <h3>🎯 ${ContentLanguageManager.getText('title')}</h3>
+        <h3>🎯 ${ContentLanguageManager.getText("title")}</h3>
         <div class="luma-status">
-          ✅ ${ContentLanguageManager.getText('status.authenticated')} | ${ContentLanguageManager.getText('messages.failed')} to get event list
+          ✅ ${ContentLanguageManager.getText("status.authenticated")} | ${ContentLanguageManager.getText("messages.failed")} to get event list
         </div>
         <div class="luma-cookie-status" style="font-size: 11px; opacity: 0.8;">
-          🍪 ${ContentLanguageManager.getText('status.cookieAuthorized')}
+          🍪 ${ContentLanguageManager.getText("status.cookieAuthorized")}
         </div>
       </div>
       <div class="luma-events-list">
         <div style="padding: 20px; text-align: center; color: #636e72;">
           <div style="font-size: 48px; margin-bottom: 16px;">⚠️</div>
-          <h4 style="margin: 0 0 12px 0;">${ContentLanguageManager.getText('messages.failed')} to get event list</h4>
+          <h4 style="margin: 0 0 12px 0;">${ContentLanguageManager.getText("messages.failed")} to get event list</h4>
           <p style="line-height: 1.5;">
-            ${ContentLanguageManager.getText('messages.possibleReasons')}
-            <br>• ${ContentLanguageManager.getText('messages.networkIssue')}
-            <br>• ${ContentLanguageManager.getText('messages.apiUnavailable')}
-            <br>• ${ContentLanguageManager.getText('messages.authAbnormal')}
+            ${ContentLanguageManager.getText("messages.possibleReasons")}
+            <br>• ${ContentLanguageManager.getText("messages.networkIssue")}
+            <br>• ${ContentLanguageManager.getText("messages.apiUnavailable")}
+            <br>• ${ContentLanguageManager.getText("messages.authAbnormal")}
             <br><br>
-            ${ContentLanguageManager.getText('messages.refreshPage')}
+            ${ContentLanguageManager.getText("messages.refreshPage")}
           </p>
         </div>
       </div>
     `;
 
-    const style = document.createElement('style');
+    const style = document.createElement("style");
     style.textContent = this.getUIStyles();
 
     document.head.appendChild(style);
@@ -1528,14 +1561,14 @@ class LumaDataScraper {
   // Show event details
   showEventDetails(event) {
     // Remove existing detail modal
-    const existingModal = document.querySelector('#luma-event-detail-modal');
+    const existingModal = document.querySelector("#luma-event-detail-modal");
     if (existingModal) {
       existingModal.remove();
     }
 
     // Create detail modal
-    const modal = document.createElement('div');
-    modal.id = 'luma-event-detail-modal';
+    const modal = document.createElement("div");
+    modal.id = "luma-event-detail-modal";
     modal.style.cssText = `
       position: fixed;
       top: 0;
@@ -1551,7 +1584,7 @@ class LumaDataScraper {
       box-sizing: border-box;
     `;
 
-    const modalContent = document.createElement('div');
+    const modalContent = document.createElement("div");
     modalContent.style.cssText = `
       background: white;
       border-radius: 12px;
@@ -1564,26 +1597,32 @@ class LumaDataScraper {
 
     const startDate = new Date(event.start_at);
     const endDate = event.end_at ? new Date(event.end_at) : null;
-    const location = event.location_type === 'offline'
-      ? (event.geo_address_info?.address || event.geo_address_info?.city || ContentLanguageManager.getText('events.offline'))
-      : event.location_type;
+    const location =
+      event.location_type === "offline"
+        ? event.geo_address_info?.address ||
+          event.geo_address_info?.city ||
+          ContentLanguageManager.getText("events.offline")
+        : event.location_type;
 
     const accessStatus = event.canScrape
-      ? `✅ ${ContentLanguageManager.getText('events.guestListVisible')} | 🔑 ${ContentLanguageManager.getText('events.hasAccess')}`
+      ? `✅ ${ContentLanguageManager.getText("events.guestListVisible")} | 🔑 ${ContentLanguageManager.getText("events.hasAccess")}`
       : event.show_guest_list
-        ? `✅ ${ContentLanguageManager.getText('events.guestListVisible')} | ❌ ${ContentLanguageManager.getText('events.noAccess')}`
-        : `❌ ${ContentLanguageManager.getText('events.guestListHidden')}`;
+        ? `✅ ${ContentLanguageManager.getText("events.guestListVisible")} | ❌ ${ContentLanguageManager.getText("events.noAccess")}`
+        : `❌ ${ContentLanguageManager.getText("events.guestListHidden")}`;
 
     modalContent.innerHTML = `
       <div style="position: relative;">
-        ${event.cover_url ? `
+        ${
+          event.cover_url
+            ? `
           <img src="${event.cover_url}" alt="Event Cover" style="
             width: 100%;
             height: 200px;
             object-fit: cover;
             border-radius: 12px 12px 0 0;
           "/>
-        ` : `
+        `
+            : `
           <div style="
             width: 100%;
             height: 200px;
@@ -1598,8 +1637,9 @@ class LumaDataScraper {
           ">
             🎯 ${event.name}
           </div>
-        `}
-        
+        `
+        }
+
         <button onclick="this.closest('#luma-event-detail-modal').remove()" style="
           position: absolute;
           top: 12px;
@@ -1618,54 +1658,62 @@ class LumaDataScraper {
           transition: background 0.2s;
         " onmouseover="this.style.background='rgba(0,0,0,0.8)'" onmouseout="this.style.background='rgba(0,0,0,0.6)'">×</button>
       </div>
-      
+
       <div style="padding: 24px;">
         <h2 style="margin: 0 0 16px 0; font-size: 20px; color: #2d3436;">${event.name}</h2>
-        
+
         <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px; color: #636e72;">
           <div style="display: flex; align-items: center; gap: 8px;">
             <span style="font-size: 16px;">📅</span>
             <div>
-              <div><strong>${ContentLanguageManager.getText('events.startTimeLabel')}</strong> ${startDate.toLocaleString()}</div>
-              ${endDate ? `<div><strong>${ContentLanguageManager.getText('events.endTimeLabel')}</strong> ${endDate.toLocaleString()}</div>` : ''}
+              <div><strong>${ContentLanguageManager.getText("events.startTimeLabel")}</strong> ${startDate.toLocaleString()}</div>
+              ${endDate ? `<div><strong>${ContentLanguageManager.getText("events.endTimeLabel")}</strong> ${endDate.toLocaleString()}</div>` : ""}
             </div>
           </div>
-          
+
           <div style="display: flex; align-items: center; gap: 8px;">
             <span style="font-size: 16px;">📍</span>
-            <div><strong>${ContentLanguageManager.getText('events.locationLabel')}</strong> ${location}</div>
+            <div><strong>${ContentLanguageManager.getText("events.locationLabel")}</strong> ${location}</div>
           </div>
-          
+
           <div style="display: flex; align-items: center; gap: 8px;">
             <span style="font-size: 16px;">🎫</span>
-            <div><strong>${ContentLanguageManager.getText('events.visibilityLabel')}</strong> ${event.visibility}</div>
+            <div><strong>${ContentLanguageManager.getText("events.visibilityLabel")}</strong> ${event.visibility}</div>
           </div>
-          
+
           <div style="display: flex; align-items: flex-start; gap: 8px;">
             <span style="font-size: 16px;">🔐</span>
-            <div><strong>${ContentLanguageManager.getText('events.scrapeStatusLabel')}</strong> ${accessStatus}</div>
+            <div><strong>${ContentLanguageManager.getText("events.scrapeStatusLabel")}</strong> ${accessStatus}</div>
           </div>
-          
-          ${event.description ? `
+
+          ${
+            event.description
+              ? `
             <div style="display: flex; align-items: flex-start; gap: 8px;">
               <span style="font-size: 16px;">📝</span>
               <div>
-                <div><strong>${ContentLanguageManager.getText('events.description')}:</strong></div>
+                <div><strong>${ContentLanguageManager.getText("events.description")}:</strong></div>
                 <div style="margin-top: 4px; line-height: 1.5; max-height: 120px; overflow-y: auto; padding: 8px; background: #f8f9fa; border-radius: 4px;">
-                  ${event.description.replace(/\n/g, '<br>')}
+                  ${event.description.replace(/\n/g, "<br>")}
                 </div>
               </div>
             </div>
-          ` : ''}
-          
-          ${event.guest_count ? `
+          `
+              : ""
+          }
+
+          ${
+            event.guest_count
+              ? `
             <div style="display: flex; align-items: center; gap: 8px;">
               <span style="font-size: 16px;">👥</span>
-              <div><strong>${ContentLanguageManager.getText('events.guestCountLabel')}</strong> ${event.guest_count}</div>
+              <div><strong>${ContentLanguageManager.getText("events.guestCountLabel")}</strong> ${event.guest_count}</div>
             </div>
-          ` : ''}
+          `
+              : ""
+          }
         </div>
-        
+
         <div style="display: flex; gap: 12px; margin-top: 24px;">
           <a href="https://lu.ma/${event.url}" target="_blank" style="
             flex: 1;
@@ -1678,9 +1726,9 @@ class LumaDataScraper {
             font-weight: 500;
             transition: background 0.2s;
           " onmouseover="this.style.background='#5a6fd8'" onmouseout="this.style.background='#667eea'">
-            🔗 ${ContentLanguageManager.getText('events.viewOriginal')}
+            🔗 ${ContentLanguageManager.getText("events.viewOriginal")}
           </a>
-          
+
           <button onclick="this.closest('#luma-event-detail-modal').remove()" style="
             flex: 1;
             padding: 12px 16px;
@@ -1692,7 +1740,7 @@ class LumaDataScraper {
             cursor: pointer;
             transition: background 0.2s;
           " onmouseover="this.style.background='#5a6268'" onmouseout="this.style.background='#6c757d'">
-            ${ContentLanguageManager.getText('events.close')}
+            ${ContentLanguageManager.getText("events.close")}
           </button>
         </div>
       </div>
@@ -1702,7 +1750,7 @@ class LumaDataScraper {
     document.body.appendChild(modal);
 
     // Click modal background to close
-    modal.addEventListener('click', (e) => {
+    modal.addEventListener("click", (e) => {
       if (e.target === modal) {
         modal.remove();
       }
@@ -1710,32 +1758,32 @@ class LumaDataScraper {
 
     // ESC key to close
     const escHandler = (e) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         modal.remove();
-        document.removeEventListener('keydown', escHandler);
+        document.removeEventListener("keydown", escHandler);
       }
     };
-    document.addEventListener('keydown', escHandler);
+    document.addEventListener("keydown", escHandler);
   }
 
   // Get user events from API
   async getUserEvents() {
     try {
-      const apiUrl = 'https://api2.luma.com/search/get-results?query=';
+      const apiUrl = "https://api2.luma.com/search/get-results?query=";
       const headers = {
-        'accept': '*/*',
-        'accept-language': 'zh',
-        'cookie': this.cookieHeader,
-        'origin': 'https://luma.com',
-        'referer': 'https://luma.com/',
-        'x-luma-client-type': 'luma-web',
-        'x-luma-web-url': 'https://luma.com/home'
+        accept: "*/*",
+        "accept-language": "zh",
+        cookie: this.cookieHeader,
+        origin: "https://luma.com",
+        referer: "https://luma.com/",
+        "x-luma-client-type": "luma-web",
+        "x-luma-web-url": "https://luma.com/home",
       };
 
       const response = await fetch(apiUrl, {
-        method: 'GET',
+        method: "GET",
         headers: headers,
-        credentials: 'include'
+        credentials: "include",
       });
 
       if (!response.ok) {
@@ -1744,50 +1792,50 @@ class LumaDataScraper {
 
       return await response.json();
     } catch (error) {
-      console.error('Failed to get user events:', error);
+      console.error("Failed to get user events:", error);
       return null;
     }
   }
 
   // Handle messages from popup
   handleMessage(request, _sender, sendResponse) {
-    if (request.action === 'getStatus') {
+    if (request.action === "getStatus") {
       sendResponse({
         isRunning: this.isRunning,
         currentPage: this.currentPage,
-        dataCount: this.totalVisitors ? this.totalVisitors.length : 0
+        dataCount: this.totalVisitors ? this.totalVisitors.length : 0,
       });
-    } else if (request.action === 'startScraping') {
-      console.log('⚠️ Received old startScraping message, ignored');
+    } else if (request.action === "startScraping") {
+      console.log("⚠️ Received old startScraping message, ignored");
       sendResponse({ success: true });
-    } else if (request.action === 'stopScraping') {
-      console.log('⚠️ Received old stopScraping message, ignored');
+    } else if (request.action === "stopScraping") {
+      console.log("⚠️ Received old stopScraping message, ignored");
       sendResponse({ success: true });
-    } else if (request.action === 'resetPermission') {
+    } else if (request.action === "resetPermission") {
       this.handleResetPermission();
       sendResponse({ success: true });
-    } else if (request.action === 'cookieConsentGranted') {
+    } else if (request.action === "cookieConsentGranted") {
       this.handleCookieConsentGranted();
       sendResponse({ success: true });
-    } else if (request.action === 'changeLanguage') {
+    } else if (request.action === "changeLanguage") {
       this.handleLanguageChange(request.language);
       sendResponse({ success: true });
-    } else if (request.action === 'checkStatus') {
-      const eventsContainer = document.querySelector('#luma-events-list');
+    } else if (request.action === "checkStatus") {
+      const eventsContainer = document.querySelector("#luma-events-list");
       sendResponse({
         loaded: true,
-        eventsListVisible: eventsContainer && eventsContainer.style.display !== 'none',
+        eventsListVisible: eventsContainer && eventsContainer.style.display !== "none",
         eventsCount: this.allEvents ? this.allEvents.length : 0,
         containerExists: !!eventsContainer,
         authStatus: !!this.authValue,
-        initComplete: this.initComplete || false
+        initComplete: this.initComplete || false,
       });
     }
   }
 
   // Handle permission reset from popup
   handleResetPermission() {
-    console.log('🔄 Received permission reset request');
+    console.log("🔄 Received permission reset request");
 
     // Reset Cookie consent status
     this.cookieConsent = false;
@@ -1796,20 +1844,20 @@ class LumaDataScraper {
     this.cookieHeader = null;
 
     // Hide existing UI
-    const existingContainer = document.querySelector('#luma-events-list');
+    const existingContainer = document.querySelector("#luma-events-list");
     if (existingContainer) {
-      existingContainer.style.display = 'none';
+      existingContainer.style.display = "none";
     }
 
     // Reset initialization status
     this.initComplete = false;
 
-    console.log('✅ Permission reset, need re-authorization');
+    console.log("✅ Permission reset, need re-authorization");
   }
 
   // Handle cookie consent granted from popup
   async handleCookieConsentGranted() {
-    console.log('✅ Received popup Cookie consent message');
+    console.log("✅ Received popup Cookie consent message");
 
     this.cookieConsent = true;
 
@@ -1819,57 +1867,57 @@ class LumaDataScraper {
 
   // Handle language change from popup
   handleLanguageChange(language) {
-    console.log('🌐 Received language switch request:', language);
-    
+    console.log("🌐 Received language switch request:", language);
+
     // Update language setting in localStorage
-    localStorage.setItem('luma-scraper-lang', language);
-    
+    localStorage.setItem("luma-scraper-lang", language);
+
     // Update language of existing UI
     this.updateUILanguage();
   }
 
   // Update UI language
   updateUILanguage() {
-    const container = document.getElementById('luma-scraper-events-container');
+    const container = document.getElementById("luma-scraper-events-container");
     if (container) {
       // Update main title
-      const title = container.querySelector('h3');
+      const title = container.querySelector("h3");
       if (title) {
-        title.textContent = `🎯 ${ContentLanguageManager.getText('title')}`;
+        title.textContent = `🎯 ${ContentLanguageManager.getText("title")}`;
       }
 
       // Update status text
-      const statusDiv = container.querySelector('.luma-status');
+      const statusDiv = container.querySelector(".luma-status");
       if (statusDiv) {
         if (this.allEvents) {
           // Normal event list status
-          const scrapableCount = this.allEvents.filter(e => e.canScrape).length;
+          const scrapableCount = this.allEvents.filter((e) => e.canScrape).length;
           const totalCount = this.allEvents.length;
-          statusDiv.textContent = `✅ ${ContentLanguageManager.getText('status.authenticated')} | ${ContentLanguageManager.getText('status.found')} ${scrapableCount}/${totalCount} ${ContentLanguageManager.getText('status.scrappable')}`;
+          statusDiv.textContent = `✅ ${ContentLanguageManager.getText("status.authenticated")} | ${ContentLanguageManager.getText("status.found")} ${scrapableCount}/${totalCount} ${ContentLanguageManager.getText("status.scrappable")}`;
         } else {
           // Fallback UI status
-          statusDiv.textContent = `✅ ${ContentLanguageManager.getText('status.authenticated')} | ${ContentLanguageManager.getText('messages.failed')} to get event list`;
+          statusDiv.textContent = `✅ ${ContentLanguageManager.getText("status.authenticated")} | ${ContentLanguageManager.getText("messages.failed")} to get event list`;
         }
       }
 
       // Update Cookie status text
-      const cookieStatus = container.querySelector('.luma-cookie-status');
+      const cookieStatus = container.querySelector(".luma-cookie-status");
       if (cookieStatus) {
-        cookieStatus.textContent = `🍪 ${ContentLanguageManager.getText('status.cookieAuthorized')}`;
+        cookieStatus.textContent = `🍪 ${ContentLanguageManager.getText("status.cookieAuthorized")}`;
       }
 
       // Update 'no scrappable events' text
-      const noEventsDiv = container.querySelector('.no-events');
+      const noEventsDiv = container.querySelector(".no-events");
       if (noEventsDiv) {
-        noEventsDiv.textContent = ContentLanguageManager.getText('messages.noScrapableEvents');
+        noEventsDiv.textContent = ContentLanguageManager.getText("messages.noScrapableEvents");
       }
 
       // Update buttons and text in event list
       this.updateEventItemsLanguage();
-      
+
       // Update static text in event details
       this.updateEventDetailsLanguage();
-      
+
       // Update error messages in fallback UI
       this.updateFallbackUILanguage();
     }
@@ -1877,24 +1925,24 @@ class LumaDataScraper {
 
   // Update fallback UI language
   updateFallbackUILanguage() {
-    const container = document.getElementById('luma-scraper-events-container');
+    const container = document.getElementById("luma-scraper-events-container");
     if (container) {
       // Update fallback error title
-      const errorTitle = container.querySelector('h4');
-      if (errorTitle && errorTitle.textContent.includes('get event list')) {
-        errorTitle.textContent = `${ContentLanguageManager.getText('messages.failed')} to get event list`;
+      const errorTitle = container.querySelector("h4");
+      if (errorTitle && errorTitle.textContent.includes("get event list")) {
+        errorTitle.textContent = `${ContentLanguageManager.getText("messages.failed")} to get event list`;
       }
 
       // Update error details paragraph
-      const errorParagraph = container.querySelector('.luma-events-list p');
+      const errorParagraph = container.querySelector(".luma-events-list p");
       if (errorParagraph) {
         errorParagraph.innerHTML = `
-          ${ContentLanguageManager.getText('messages.possibleReasons')}
-          <br>• ${ContentLanguageManager.getText('messages.networkIssue')}
-          <br>• ${ContentLanguageManager.getText('messages.apiUnavailable')}
-          <br>• ${ContentLanguageManager.getText('messages.authAbnormal')}
+          ${ContentLanguageManager.getText("messages.possibleReasons")}
+          <br>• ${ContentLanguageManager.getText("messages.networkIssue")}
+          <br>• ${ContentLanguageManager.getText("messages.apiUnavailable")}
+          <br>• ${ContentLanguageManager.getText("messages.authAbnormal")}
           <br><br>
-          ${ContentLanguageManager.getText('messages.refreshPage')}
+          ${ContentLanguageManager.getText("messages.refreshPage")}
         `;
       }
     }
@@ -1902,61 +1950,63 @@ class LumaDataScraper {
 
   // Update event details language
   updateEventDetailsLanguage() {
-    const eventItems = document.querySelectorAll('.luma-event-item');
-    
+    const eventItems = document.querySelectorAll(".luma-event-item");
+
     eventItems.forEach((item, index) => {
       if (!this.allEvents || !this.allEvents[index]) return;
       const event = this.allEvents[index];
 
       // Update event access status text - using more robust DOM selection
-      const accessElement = item.querySelector('.event-access-text');
+      const accessElement = item.querySelector(".event-access-text");
       if (accessElement) {
         // Force refresh the access status with current language
         const accessStatus = event.canScrape
-          ? `✅ ${ContentLanguageManager.getText('events.guestListVisible')} | 🔑 ${ContentLanguageManager.getText('events.hasAccess')}`
+          ? `✅ ${ContentLanguageManager.getText("events.guestListVisible")} | 🔑 ${ContentLanguageManager.getText("events.hasAccess")}`
           : event.show_guest_list
-            ? `✅ ${ContentLanguageManager.getText('events.guestListVisible')} | ❌ ${ContentLanguageManager.getText('events.noAccess')}`
-            : `❌ ${ContentLanguageManager.getText('events.guestListHidden')}`;
-        
+            ? `✅ ${ContentLanguageManager.getText("events.guestListVisible")} | ❌ ${ContentLanguageManager.getText("events.noAccess")}`
+            : `❌ ${ContentLanguageManager.getText("events.guestListHidden")}`;
+
         accessElement.innerHTML = accessStatus;
       } else {
         // If .event-access-text element is missing, try to find and update the entire info section
-        const infoElement = item.querySelector('.luma-event-info');
+        const infoElement = item.querySelector(".luma-event-info");
         if (infoElement) {
           // Reconstruct the access status line
-          const existingLines = infoElement.innerHTML.split('<br>');
+          const existingLines = infoElement.innerHTML.split("<br>");
           if (existingLines.length >= 3) {
             const accessStatus = event.canScrape
-              ? `✅ ${ContentLanguageManager.getText('events.guestListVisible')} | 🔑 ${ContentLanguageManager.getText('events.hasAccess')}`
+              ? `✅ ${ContentLanguageManager.getText("events.guestListVisible")} | 🔑 ${ContentLanguageManager.getText("events.hasAccess")}`
               : event.show_guest_list
-                ? `✅ ${ContentLanguageManager.getText('events.guestListVisible')} | ❌ ${ContentLanguageManager.getText('events.noAccess')}`
-                : `❌ ${ContentLanguageManager.getText('events.guestListHidden')}`;
-            
+                ? `✅ ${ContentLanguageManager.getText("events.guestListVisible")} | ❌ ${ContentLanguageManager.getText("events.noAccess")}`
+                : `❌ ${ContentLanguageManager.getText("events.guestListHidden")}`;
+
             // Update the third line (access status line) with proper wrapper
             existingLines[2] = `🎫 ${event.visibility} | <span class="event-access-text">${accessStatus}</span>`;
-            infoElement.innerHTML = existingLines.join('<br>');
+            infoElement.innerHTML = existingLines.join("<br>");
           }
         }
       }
 
       // Update progress text
-      const progressText = item.querySelector('.progress-text');
+      const progressText = item.querySelector(".progress-text");
       if (progressText) {
         const currentText = progressText.textContent;
         // Only update if it's in a ready/idle state (not actively showing progress)
-        const chineseFailed = ContentLanguageManager.getText('messages.failed');
-        const chineseCompleted = ContentLanguageManager.getText('messages.completed');
-        const chinesePage = ContentLanguageManager.getText('messages.page');
-        
-        if (!currentText.includes('...') && 
-            !currentText.includes(chineseFailed) && 
-            !currentText.includes('failed') && 
-            !currentText.includes(chineseCompleted) && 
-            !currentText.includes('completed') &&
-            !currentText.includes('%') &&
-            !currentText.includes('Page') &&
-            !currentText.includes(chinesePage)) {
-          progressText.textContent = ContentLanguageManager.getText('messages.ready');
+        const chineseFailed = ContentLanguageManager.getText("messages.failed");
+        const chineseCompleted = ContentLanguageManager.getText("messages.completed");
+        const chinesePage = ContentLanguageManager.getText("messages.page");
+
+        if (
+          !currentText.includes("...") &&
+          !currentText.includes(chineseFailed) &&
+          !currentText.includes("failed") &&
+          !currentText.includes(chineseCompleted) &&
+          !currentText.includes("completed") &&
+          !currentText.includes("%") &&
+          !currentText.includes("Page") &&
+          !currentText.includes(chinesePage)
+        ) {
+          progressText.textContent = ContentLanguageManager.getText("messages.ready");
         }
       }
     });
@@ -1964,58 +2014,58 @@ class LumaDataScraper {
 
   // Update event items language
   updateEventItemsLanguage() {
-    const eventItems = document.querySelectorAll('.luma-event-item');
+    const eventItems = document.querySelectorAll(".luma-event-item");
     eventItems.forEach((item, index) => {
       if (!this.allEvents || !this.allEvents[index]) return;
 
       // Update button text
-      const autoBtn = item.querySelector('.scrape-auto-btn');
-      const manualBtn = item.querySelector('.scrape-manual-btn');
-      const stopBtn = item.querySelector('.stop-btn');
-      const nextBtn = item.querySelector('.next-page-btn');
-      const exportBtn = item.querySelector('.export-btn');
-      const resetBtn = item.querySelector('.reset-btn');
-      const viewBtn = item.querySelector('.view-btn');
+      const autoBtn = item.querySelector(".scrape-auto-btn");
+      const manualBtn = item.querySelector(".scrape-manual-btn");
+      const stopBtn = item.querySelector(".stop-btn");
+      const nextBtn = item.querySelector(".next-page-btn");
+      const exportBtn = item.querySelector(".export-btn");
+      const resetBtn = item.querySelector(".reset-btn");
+      const viewBtn = item.querySelector(".view-btn");
 
       if (autoBtn && !autoBtn.disabled) {
-        autoBtn.textContent = ContentLanguageManager.getText('buttons.autoScrape');
+        autoBtn.textContent = ContentLanguageManager.getText("buttons.autoScrape");
       }
       if (manualBtn && !manualBtn.disabled) {
-        manualBtn.textContent = ContentLanguageManager.getText('buttons.manualScrape');
+        manualBtn.textContent = ContentLanguageManager.getText("buttons.manualScrape");
       }
       if (stopBtn) {
-        stopBtn.textContent = ContentLanguageManager.getText('buttons.stop');
+        stopBtn.textContent = ContentLanguageManager.getText("buttons.stop");
       }
       if (nextBtn && !nextBtn.disabled) {
-        nextBtn.textContent = ContentLanguageManager.getText('buttons.nextPage');
+        nextBtn.textContent = ContentLanguageManager.getText("buttons.nextPage");
       }
       if (exportBtn) {
         const match = exportBtn.textContent.match(/\((\d+)/);
-        const count = match ? match[1] : '';
-        exportBtn.textContent = count ? 
-          `${ContentLanguageManager.getText('buttons.export')} (${count}${ContentLanguageManager.getText('messages.items')})` :
-          ContentLanguageManager.getText('buttons.export');
+        const count = match ? match[1] : "";
+        exportBtn.textContent = count
+          ? `${ContentLanguageManager.getText("buttons.export")} (${count}${ContentLanguageManager.getText("messages.items")})`
+          : ContentLanguageManager.getText("buttons.export");
       }
       if (resetBtn) {
-        resetBtn.textContent = ContentLanguageManager.getText('buttons.reset');
+        resetBtn.textContent = ContentLanguageManager.getText("buttons.reset");
       }
       if (viewBtn) {
-        viewBtn.textContent = ContentLanguageManager.getText('buttons.viewDetails');
+        viewBtn.textContent = ContentLanguageManager.getText("buttons.viewDetails");
       }
-      
+
       // Update unable to scrape button text
-      const disabledBtn = item.querySelector('.luma-btn-disabled');
+      const disabledBtn = item.querySelector(".luma-btn-disabled");
       if (disabledBtn) {
         // Always update to current language, regardless of current text
-        disabledBtn.textContent = ContentLanguageManager.getText('events.noAccess');
+        disabledBtn.textContent = ContentLanguageManager.getText("events.noAccess");
       }
     });
   }
 }
 
 // Initialize when DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => {
     new LumaDataScraper();
   });
 } else {
