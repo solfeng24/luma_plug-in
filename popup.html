@@ -11,8 +11,8 @@
             <header class="header">
                 <div class="header-top">
                     <h1>EventMate</h1>
-                    <div class="language-switch">
-                        <button class="lang-btn" id="lang-btn">CN</button>
+                    <div class="language-switch" style="margin-bottom: 8px">
+                        <button class="lang-btn btn btn-primary" id="lang-btn">CN</button>
                     </div>
                 </div>
                 <div class="status-indicator">
@@ -34,6 +34,7 @@
                             Checking...
                         </div>
                         <button
+                            style="margin-top: 8px"
                             class="btn btn-primary"
                             id="reset-permission"
                             data-i18n="permissions.resetButton"
@@ -42,6 +43,152 @@
                         </button>
                     </div>
                 </section>
+
+                <!-- Permission Reset Confirmation Modal -->
+                <div
+                    class="modal-overlay section"
+                    id="reset-permission-modal"
+                    style="display: none"
+                >
+                    <div class="modal-dialog">
+                        <div class="modal-header">
+                            <h3 data-i18n="modal.resetTitle">Reset Cookie Permission</h3>
+                        </div>
+                        <div class="modal-body">
+                            <p data-i18n="modal.resetMessage">
+                                Are you sure you want to reset cookie permission?
+                            </p>
+                            <p
+                                style="color: #e17055; font-size: 12px"
+                                data-i18n="modal.resetWarning"
+                            >
+                                This will clear current authorization status, you need to
+                                re-authorize when visiting Luma page.
+                            </p>
+                        </div>
+                        <div style="margin-top: 8px" class="modal-footer">
+                            <button
+                                class="btn btn-secondary"
+                                id="cancel-reset"
+                                data-i18n="modal.cancel"
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                class="btn btn-danger"
+                                id="confirm-reset"
+                                data-i18n="modal.confirmReset"
+                            >
+                                Confirm Reset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cookie Authorization Modal -->
+                <div class="modal-overlay section" id="cookie-consent-modal" style="display: none">
+                    <div class="modal-dialog">
+                        <div class="modal-header">
+                            <div style="font-size: 32px; margin-bottom: 12px">🍪</div>
+                            <h3 data-i18n="modal.cookieTitle">Cookie Usage Authorization</h3>
+                        </div>
+                        <div class="modal-body">
+                            <p data-i18n="modal.cookieMessage">
+                                EventMate needs to read authentication cookies from current page to
+                                access event data you have permission to view.
+                            </p>
+                            <div style="margin: 16px 0">
+                                <strong data-i18n="modal.promises">Our Promise:</strong>
+                                <ul
+                                    style="
+                                        margin: 8px 0;
+                                        padding-left: 20px;
+                                        font-size: 12px;
+                                        color: #636e72;
+                                    "
+                                >
+                                    <li data-i18n="modal.promiseList.0">
+                                        Only read Luma-related authentication cookies
+                                    </li>
+                                    <li data-i18n="modal.promiseList.1">
+                                        Never store or transmit your cookies to any server
+                                    </li>
+                                    <li data-i18n="modal.promiseList.2">
+                                        Cookies are only used for local data scraping
+                                    </li>
+                                </ul>
+                            </div>
+                            <p style="color: #667eea; font-size: 12px" data-i18n="modal.tip">
+                                💡 Tip: You can change this choice anytime
+                            </p>
+                        </div>
+                        <div
+                            style="margin-top: 8px; display: flex; flex-direction: column; gap: 8px"
+                            class="modal-footer"
+                        >
+                            <button
+                                class="btn btn-success"
+                                id="accept-cookie-consent"
+                                data-i18n="modal.accept"
+                            >
+                                ✅ Accept & Continue
+                            </button>
+                            <button
+                                class="btn btn-danger"
+                                id="reject-cookie-consent"
+                                data-i18n="modal.reject"
+                            >
+                                ❌ Reject
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scraping Cookie Authorization Modal -->
+                <div
+                    class="modal-overlay section"
+                    id="scraping-cookie-consent-modal"
+                    style="display: none"
+                >
+                    <div class="modal-dialog">
+                        <div class="modal-header">
+                            <div style="font-size: 32px; margin-bottom: 12px">🍪</div>
+                            <h3>Cookie Permission Required</h3>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                To start scraping data, we need your explicit authorization to read
+                                authentication cookies.
+                            </p>
+                            <div style="margin: 16px 0">
+                                <strong>Our Promise:</strong>
+                                <ul
+                                    style="
+                                        margin: 8px 0;
+                                        padding-left: 20px;
+                                        font-size: 12px;
+                                        color: #636e72;
+                                    "
+                                >
+                                    <li>Only read necessary authentication information</li>
+                                    <li>Will not store or upload your cookies</li>
+                                    <li>Only used for current scraping task</li>
+                                </ul>
+                            </div>
+                            <p style="color: #667eea; font-size: 12px">
+                                Please choose whether to agree:
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-success" id="accept-scraping-consent">
+                                ✅ Agree & Start Scraping
+                            </button>
+                            <button class="btn btn-danger" id="reject-scraping-consent">
+                                ❌ Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Plugin Status -->
                 <section class="section">
@@ -92,7 +239,7 @@
                 </section>
             </main>
 
-            <footer class="footer">
+            <footer style="display: none" class="footer">
                 <div class="footer-links">
                     <a href="#" id="help-link">Help</a>
                     <a href="#" id="about-link">About</a>
@@ -105,130 +252,6 @@
         <div class="loading-overlay" id="loading-overlay">
             <div class="spinner"></div>
             <div class="loading-text">Loading...</div>
-        </div>
-
-        <!-- Permission Reset Confirmation Modal -->
-        <div class="modal-overlay" id="reset-permission-modal" style="display: none">
-            <div class="modal-dialog">
-                <div class="modal-header">
-                    <h3 data-i18n="modal.resetTitle">Reset Cookie Permission</h3>
-                </div>
-                <div class="modal-body">
-                    <p data-i18n="modal.resetMessage">
-                        Are you sure you want to reset cookie permission?
-                    </p>
-                    <p style="color: #e17055; font-size: 12px" data-i18n="modal.resetWarning">
-                        This will clear current authorization status, you need to re-authorize when
-                        visiting Luma page.
-                    </p>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" id="cancel-reset" data-i18n="modal.cancel">
-                        Cancel
-                    </button>
-                    <button
-                        class="btn btn-danger"
-                        id="confirm-reset"
-                        data-i18n="modal.confirmReset"
-                    >
-                        Confirm Reset
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Cookie Authorization Modal -->
-        <div class="modal-overlay" id="cookie-consent-modal" style="display: none">
-            <div class="modal-dialog">
-                <div class="modal-header">
-                    <div style="font-size: 32px; margin-bottom: 12px">🍪</div>
-                    <h3 data-i18n="modal.cookieTitle">Cookie Usage Authorization</h3>
-                </div>
-                <div class="modal-body">
-                    <p data-i18n="modal.cookieMessage">
-                        EventMate needs to read authentication cookies from current page to access
-                        event data you have permission to view.
-                    </p>
-                    <div style="margin: 16px 0">
-                        <strong data-i18n="modal.promises">Our Promise:</strong>
-                        <ul
-                            style="
-                                margin: 8px 0;
-                                padding-left: 20px;
-                                font-size: 12px;
-                                color: #636e72;
-                            "
-                        >
-                            <li data-i18n="modal.promiseList.0">
-                                Only read Luma-related authentication cookies
-                            </li>
-                            <li data-i18n="modal.promiseList.1">
-                                Never store or transmit your cookies to any server
-                            </li>
-                            <li data-i18n="modal.promiseList.2">
-                                Cookies are only used for local data scraping
-                            </li>
-                        </ul>
-                    </div>
-                    <p style="color: #667eea; font-size: 12px" data-i18n="modal.tip">
-                        💡 Tip: You can change this choice anytime
-                    </p>
-                </div>
-                <div class="modal-footer">
-                    <button
-                        class="btn btn-success"
-                        id="accept-cookie-consent"
-                        data-i18n="modal.accept"
-                    >
-                        ✅ Accept & Continue
-                    </button>
-                    <button
-                        class="btn btn-danger"
-                        id="reject-cookie-consent"
-                        data-i18n="modal.reject"
-                    >
-                        ❌ Reject
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Scraping Cookie Authorization Modal -->
-        <div class="modal-overlay" id="scraping-cookie-consent-modal" style="display: none">
-            <div class="modal-dialog">
-                <div class="modal-header">
-                    <div style="font-size: 32px; margin-bottom: 12px">🍪</div>
-                    <h3>Cookie Permission Required</h3>
-                </div>
-                <div class="modal-body">
-                    <p>
-                        To start scraping data, we need your explicit authorization to read
-                        authentication cookies.
-                    </p>
-                    <div style="margin: 16px 0">
-                        <strong>Our Promise:</strong>
-                        <ul
-                            style="
-                                margin: 8px 0;
-                                padding-left: 20px;
-                                font-size: 12px;
-                                color: #636e72;
-                            "
-                        >
-                            <li>Only read necessary authentication information</li>
-                            <li>Will not store or upload your cookies</li>
-                            <li>Only used for current scraping task</li>
-                        </ul>
-                    </div>
-                    <p style="color: #667eea; font-size: 12px">Please choose whether to agree:</p>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-success" id="accept-scraping-consent">
-                        ✅ Agree & Start Scraping
-                    </button>
-                    <button class="btn btn-danger" id="reject-scraping-consent">❌ Cancel</button>
-                </div>
-            </div>
         </div>
 
         <script src="js/popup.js"></script>

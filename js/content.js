@@ -463,7 +463,12 @@ class LumaDataScraper {
     container.id = "luma-scraper-events-container";
     container.innerHTML = `
       <div class="luma-scraper-header">
-        <h3>🎯 ${ContentLanguageManager.getText("title")}</h3>
+        <h3>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <path d="M9.09 4H29V3C29 2.46957 28.7893 1.96086 28.4142 1.58579C28.0391 1.21071 27.5304 1 27 1H9C7.4087 1 5.88258 1.63214 4.75736 2.75736C3.63214 3.88258 3 5.4087 3 7V25C3 26.5913 3.63214 28.1174 4.75736 29.2426C5.88258 30.3679 7.4087 31 9 31H27C27.5304 31 28.0391 30.7893 28.4142 30.4142C28.7893 30.0391 29 29.5304 29 29V10C29 9.46957 28.7893 8.96086 28.4142 8.58579C28.0391 8.21071 27.5304 8 27 8H9.09C8.81988 8.01217 8.5501 7.96944 8.29697 7.87439C8.04383 7.77934 7.8126 7.63395 7.61724 7.44701C7.42188 7.26007 7.26646 7.03545 7.16037 6.78674C7.05428 6.53803 6.99973 6.27039 7 6C6.99973 5.72961 7.05428 5.46197 7.16037 5.21326C7.26646 4.96455 7.42188 4.73993 7.61724 4.55299C7.8126 4.36605 8.04383 4.22066 8.29697 4.12561C8.5501 4.03056 8.81988 3.98783 9.09 4ZM13.64 13.59C14.3601 13.5895 15.064 13.8032 15.6623 14.2038C16.2606 14.6045 16.7263 15.174 17 15.84C17.2737 15.174 17.7394 14.6045 18.3377 14.2038C18.936 13.8032 19.6399 13.5895 20.36 13.59C21.3573 13.6801 22.2845 14.141 22.9585 14.8816C23.6324 15.6222 24.0041 16.5887 24 17.59C24 21.98 18 25.59 17 25.59C16 25.59 10 22.01 10 17.59C9.99594 16.5887 10.3676 15.6222 11.0415 14.8816C11.7155 14.141 12.6427 13.6801 13.64 13.59Z" fill="white"/>
+          </svg>
+          ${ContentLanguageManager.getText("title")}
+        </h3>
         <div class="luma-status">
           ✅ ${ContentLanguageManager.getText("status.authenticated")} | ${ContentLanguageManager.getText("status.found")} ${events.filter((e) => e.canScrape).length}/${events.length} ${ContentLanguageManager.getText("status.scrappable")}
         </div>
@@ -491,7 +496,7 @@ class LumaDataScraper {
     return `
       #luma-scraper-events-container {
         position: fixed;
-        top: 20px;
+        top: 40px;
         right: 20px;
         width: 400px;
         max-height: 80vh;
@@ -504,14 +509,18 @@ class LumaDataScraper {
         overflow: hidden;
       }
       .luma-scraper-header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(90deg, #8EC5FF 0%, #51A2FF 100%);
         color: white;
         padding: 16px 20px;
       }
       .luma-scraper-header h3 {
         margin: 0 0 8px 0;
-        font-size: 16px;
-        font-weight: 600;
+        font-size: 20px;
+        line-height: 36px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 12px;
       }
       .luma-status {
         font-size: 12px;
@@ -583,6 +592,55 @@ class LumaDataScraper {
         cursor: pointer;
         transition: all 0.2s;
       }
+      /* 自动抓取按钮 */
+      .scrape-auto-btn {
+        background: #51A2FF !important;
+        color: #FFFFFF !important;
+      }
+      .scrape-auto-btn:hover {
+        background: #2C7FFF !important;
+        transform: translateY(-1px);
+      }
+
+      /* 手动抓取按钮 */
+      .scrape-manual-btn {
+        background: #46ECD5 !important;
+        color: #005F5A !important;
+      }
+      .scrape-manual-btn:hover {
+        background: #00D5BE !important;
+        transform: translateY(-1px);
+      }
+
+      /* 查看历史/查看详情按钮 */
+      .view-btn {
+        background: #CAD5E2 !important;
+        color: #314158 !important;
+      }
+      .view-btn:hover {
+        background: #A3B4C6 !important;
+        transform: translateY(-1px);
+      }
+
+      /* 清除数据/重置按钮 */
+      .reset-btn {
+        background: #FFCCD3 !important;
+        color: #C70036 !important;
+      }
+      .reset-btn:hover {
+        background: #D9ADB3 !important;
+        transform: translateY(-1px);
+      }
+
+      /* 无法抓取按钮 */
+      .luma-btn-disabled {
+        background: #E2E8F0 !important;
+        color: #62748E !important;
+        cursor: not-allowed;
+        opacity: 1 !important;
+      }
+
+      /* 其他按钮保持原有样式类名但颜色更新 */
       .luma-btn-primary {
         background: #667eea;
         color: white;
@@ -592,11 +650,11 @@ class LumaDataScraper {
         transform: translateY(-1px);
       }
       .luma-btn-warning {
-        background: #ffc107;
-        color: #212529;
+        background: #FFB036;
+        color: #000000;
       }
       .luma-btn-warning:hover {
-        background: #e0a800;
+        background: #FF9C03;
       }
       .luma-btn-success {
         background: #28a745;
@@ -611,12 +669,6 @@ class LumaDataScraper {
       }
       .luma-btn-danger:hover {
         background: #c82333;
-      }
-      .luma-btn-disabled {
-        background: #6c757d;
-        color: white;
-        cursor: not-allowed;
-        opacity: 0.65;
       }
       .luma-btn:disabled {
         opacity: 0.5;
@@ -644,7 +696,7 @@ class LumaDataScraper {
       }
       .luma-progress-fill {
         height: 100%;
-        background: linear-gradient(90deg, #667eea, #764ba2);
+        background: linear-gradient(90deg, #8EC5FF, #51A2FF);
         width: 0%;
         transition: width 0.3s ease;
       }
@@ -672,6 +724,7 @@ class LumaDataScraper {
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: background-color 0.2s;
       }
       .luma-minimize-btn:hover {
         background: rgba(255,255,255,0.3);
@@ -700,6 +753,10 @@ class LumaDataScraper {
       }
       #luma-scraper-events-container.minimized .luma-events-list {
         display: none;
+      }
+      #luma-scraper-events-container.minimized .luma-minimize-btn {
+        position: static;
+        margin: 0 auto;
       }
     `;
   }
