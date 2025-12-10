@@ -134,6 +134,22 @@ const CONTENT_LANGUAGES = {
   },
 };
 
+const checkIcon = `<svg style="display: inline-block; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+  <path d="M13.3327 4L5.99935 11.3333L2.66602 8" stroke="#00BC7D" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`;
+
+const noIcon = `<svg style="display: inline-block; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+  <path d="M12 4L4 12" stroke="#FF637E" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M4 4L12 12" stroke="#FF637E" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`;
+
+const keyIcon = `<svg style="display: inline-block; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+  <path d="M10.6673 14V12.6667C10.6673 11.9594 10.3864 11.2811 9.88627 10.781C9.38617 10.281 8.70789 10 8.00065 10H4.00065C3.29341 10 2.61513 10.281 2.11503 10.781C1.61494 11.2811 1.33398 11.9594 1.33398 12.6667V14" stroke="#FE9A00" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M10.666 2.08545C11.2379 2.2337 11.7443 2.56763 12.1058 3.03482C12.4673 3.50202 12.6635 4.07604 12.6635 4.66678C12.6635 5.25752 12.4673 5.83154 12.1058 6.29874C11.7443 6.76594 11.2379 7.09987 10.666 7.24812" stroke="#FE9A00" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M14.666 14.0002V12.6669C14.6656 12.0761 14.4689 11.5021 14.1069 11.0351C13.7449 10.5682 13.2381 10.2346 12.666 10.0869" stroke="#FE9A00" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M6.00065 7.33333C7.47341 7.33333 8.66732 6.13943 8.66732 4.66667C8.66732 3.19391 7.47341 2 6.00065 2C4.52789 2 3.33398 3.19391 3.33398 4.66667C3.33398 6.13943 4.52789 7.33333 6.00065 7.33333Z" stroke="#FE9A00" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`;
+
 // Content language manager
 const ContentLanguageManager = {
   getCurrentLang() {
@@ -614,11 +630,11 @@ class LumaDataScraper {
 
       /* 查看历史/查看详情按钮 */
       .view-btn {
-        background: #CAD5E2 !important;
-        color: #314158 !important;
+        background: #FFB036 !important;
+        color: #000 !important;
       }
       .view-btn:hover {
-        background: #A3B4C6 !important;
+        background: #FF9C03 !important;
         transform: translateY(-1px);
       }
 
@@ -654,7 +670,7 @@ class LumaDataScraper {
         color: #000000;
       }
       .luma-btn-warning:hover {
-        background: #FF9C03;
+        background: #FFB036;
       }
       .luma-btn-success {
         background: #28a745;
@@ -887,17 +903,30 @@ class LumaDataScraper {
           : event.location_type;
 
       const accessStatus = event.canScrape
-        ? `✅ ${ContentLanguageManager.getText("events.guestListVisible")} | 🔑 ${ContentLanguageManager.getText("events.hasAccess")}`
+        ? `${checkIcon} ${ContentLanguageManager.getText("events.guestListVisible")} | ${keyIcon} ${ContentLanguageManager.getText("events.hasAccess")}`
         : event.show_guest_list
-          ? `✅ ${ContentLanguageManager.getText("events.guestListVisible")} | ❌ ${ContentLanguageManager.getText("events.noAccess")}`
-          : `❌ ${ContentLanguageManager.getText("events.guestListHidden")}`;
+          ? `${checkIcon} ${ContentLanguageManager.getText("events.guestListVisible")} | ${noIcon} ${ContentLanguageManager.getText("events.noAccess")}`
+          : `${noIcon} ${ContentLanguageManager.getText("events.guestListHidden")}`;
 
       eventItem.innerHTML = `
         <div class="luma-event-name">${event.name}</div>
         <div class="luma-event-info">
-          📅 ${startDate}<br>
-          📍 ${location}<br>
-          🎫 ${event.visibility} | <span class="event-access-text">${accessStatus}</span>
+        <svg style="display: inline-block; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M5.33398 1.3335V4.00016" stroke="#45556C" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M10.666 1.3335V4.00016" stroke="#45556C" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12.6667 2.6665H3.33333C2.59695 2.6665 2 3.26346 2 3.99984V13.3332C2 14.0696 2.59695 14.6665 3.33333 14.6665H12.6667C13.403 14.6665 14 14.0696 14 13.3332V3.99984C14 3.26346 13.403 2.6665 12.6667 2.6665Z" stroke="#45556C" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 6.6665H14" stroke="#45556C" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg> ${startDate}<br>
+        <svg style="display: inline-block; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M13.3327 6.66683C13.3327 9.9955 9.64002 13.4622 8.40002 14.5328C8.2845 14.6197 8.14388 14.6667 7.99935 14.6667C7.85482 14.6667 7.7142 14.6197 7.59868 14.5328C6.35868 13.4622 2.66602 9.9955 2.66602 6.66683C2.66602 5.25234 3.22792 3.89579 4.22811 2.89559C5.22831 1.8954 6.58486 1.3335 7.99935 1.3335C9.41384 1.3335 10.7704 1.8954 11.7706 2.89559C12.7708 3.89579 13.3327 5.25234 13.3327 6.66683Z" stroke="#45556C" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8 8.6665C9.10457 8.6665 10 7.77107 10 6.6665C10 5.56193 9.10457 4.6665 8 4.6665C6.89543 4.6665 6 5.56193 6 6.6665C6 7.77107 6.89543 8.6665 8 8.6665Z" stroke="#45556C" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg> ${location}<br>
+        <svg style="display: inline-block; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M1.33398 6.00016C1.86442 6.00016 2.37313 6.21088 2.7482 6.58595C3.12327 6.96102 3.33398 7.46973 3.33398 8.00016C3.33398 8.5306 3.12327 9.0393 2.7482 9.41438C2.37313 9.78945 1.86442 10.0002 1.33398 10.0002V11.3335C1.33398 11.6871 1.47446 12.0263 1.72451 12.2763C1.97456 12.5264 2.3137 12.6668 2.66732 12.6668H13.334C13.6876 12.6668 14.0267 12.5264 14.2768 12.2763C14.5268 12.0263 14.6673 11.6871 14.6673 11.3335V10.0002C14.1369 10.0002 13.6282 9.78945 13.2531 9.41438C12.878 9.0393 12.6673 8.5306 12.6673 8.00016C12.6673 7.46973 12.878 6.96102 13.2531 6.58595C13.6282 6.21088 14.1369 6.00016 14.6673 6.00016V4.66683C14.6673 4.31321 14.5268 3.97407 14.2768 3.72402C14.0267 3.47397 13.6876 3.3335 13.334 3.3335H2.66732C2.3137 3.3335 1.97456 3.47397 1.72451 3.72402C1.47446 3.97407 1.33398 4.31321 1.33398 4.66683V6.00016Z" stroke="#FE9A00" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8.66602 3.3335V4.66683" stroke="#FE9A00" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8.66602 11.3335V12.6668" stroke="#FE9A00" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8.66602 7.3335V8.66683" stroke="#FE9A00" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg> ${event.visibility} | <span class="event-access-text">${accessStatus}</span>
         </div>
         ${
           event.canScrape
@@ -1662,10 +1691,10 @@ class LumaDataScraper {
         : event.location_type;
 
     const accessStatus = event.canScrape
-      ? `✅ ${ContentLanguageManager.getText("events.guestListVisible")} | 🔑 ${ContentLanguageManager.getText("events.hasAccess")}`
+      ? `${checkIcon} ${ContentLanguageManager.getText("events.guestListVisible")} | ${keyIcon} ${ContentLanguageManager.getText("events.hasAccess")}`
       : event.show_guest_list
-        ? `✅ ${ContentLanguageManager.getText("events.guestListVisible")} | ❌ ${ContentLanguageManager.getText("events.noAccess")}`
-        : `❌ ${ContentLanguageManager.getText("events.guestListHidden")}`;
+        ? `${checkIcon} ${ContentLanguageManager.getText("events.guestListVisible")} | ${noIcon} ${ContentLanguageManager.getText("events.noAccess")}`
+        : `${noIcon} ${ContentLanguageManager.getText("events.guestListHidden")}`;
 
     modalContent.innerHTML = `
       <div style="position: relative;">
@@ -2018,10 +2047,10 @@ class LumaDataScraper {
       if (accessElement) {
         // Force refresh the access status with current language
         const accessStatus = event.canScrape
-          ? `✅ ${ContentLanguageManager.getText("events.guestListVisible")} | 🔑 ${ContentLanguageManager.getText("events.hasAccess")}`
+          ? `${checkIcon} ${ContentLanguageManager.getText("events.guestListVisible")} | ${keyIcon} ${ContentLanguageManager.getText("events.hasAccess")}`
           : event.show_guest_list
-            ? `✅ ${ContentLanguageManager.getText("events.guestListVisible")} | ❌ ${ContentLanguageManager.getText("events.noAccess")}`
-            : `❌ ${ContentLanguageManager.getText("events.guestListHidden")}`;
+            ? `${checkIcon} ${ContentLanguageManager.getText("events.guestListVisible")} | ${noIcon} ${ContentLanguageManager.getText("events.noAccess")}`
+            : `${noIcon} ${ContentLanguageManager.getText("events.guestListHidden")}`;
 
         accessElement.innerHTML = accessStatus;
       } else {
@@ -2032,10 +2061,10 @@ class LumaDataScraper {
           const existingLines = infoElement.innerHTML.split("<br>");
           if (existingLines.length >= 3) {
             const accessStatus = event.canScrape
-              ? `✅ ${ContentLanguageManager.getText("events.guestListVisible")} | 🔑 ${ContentLanguageManager.getText("events.hasAccess")}`
+              ? `${checkIcon} ${ContentLanguageManager.getText("events.guestListVisible")} | ${keyIcon} ${ContentLanguageManager.getText("events.hasAccess")}`
               : event.show_guest_list
-                ? `✅ ${ContentLanguageManager.getText("events.guestListVisible")} | ❌ ${ContentLanguageManager.getText("events.noAccess")}`
-                : `❌ ${ContentLanguageManager.getText("events.guestListHidden")}`;
+                ? `${checkIcon} ${ContentLanguageManager.getText("events.guestListVisible")} | ${noIcon} ${ContentLanguageManager.getText("events.noAccess")}`
+                : `${noIcon} ${ContentLanguageManager.getText("events.guestListHidden")}`;
 
             // Update the third line (access status line) with proper wrapper
             existingLines[2] = `🎫 ${event.visibility} | <span class="event-access-text">${accessStatus}</span>`;
