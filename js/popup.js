@@ -79,6 +79,8 @@ const LANGUAGES = {
       confirmClearData: "确定要清除所有抓取数据吗？此操作不可恢复。",
       dataCleared: "数据已清除",
       clearFailedAlert: "清除失败",
+      downloadLimitStatus: "今日下载次数: {current}/{limit} (剩余: {remaining})",
+      downloadLimitReached: "今日下载次数已达上限，请明天再试",
       helpText:
         '使用说明：\n\n1. 打开Luma网站并登录账户\n2. 插件会自动显示可抓取的事件列表\n3. 选择抓取模式：\n   🤖 自动翻页 - 3-6秒随机延迟\n   👆 手动翻页 - 手动控制节奏\n4. 点击"开始抓取"获取访客数据\n5. 完成后直接导出CSV文件\n\n注意：\n- 只有公开访客列表的事件可以抓取\n- 自动保存数据，可在这里查看和导出',
       aboutText:
@@ -165,6 +167,8 @@ const LANGUAGES = {
         "Are you sure you want to clear all scraped data? This action cannot be undone.",
       dataCleared: "Data cleared",
       clearFailedAlert: "Clear failed",
+      downloadLimitStatus: "Daily downloads: {current}/{limit} (remaining: {remaining})",
+      downloadLimitReached: "Daily download limit reached, please try again tomorrow",
       helpText:
         'Usage Instructions:\n\n1. Open Luma website and log into your account\n2. Plugin will automatically display scrapeable events list\n3. Choose scraping mode:\n   🤖 Auto pagination - 3-6 seconds random delay\n   👆 Manual pagination - manual control rhythm\n4. Click "Start Scraping" to get visitor data\n5. Export CSV file when completed\n\nNotes:\n- Only events with public guest lists can be scraped\n- Data is automatically saved, can be viewed and exported here',
       aboutText:
@@ -220,12 +224,14 @@ class LumaPopup {
 
       this.bindEvents();
       this.updatePermissionStatus();
+      await this.updateDownloadLimitStatus();
       this.updateUI();
       this.hideLoading();
 
       // Regular status updates
       setInterval(() => {
         this.updatePluginStatus();
+        this.updateDownloadLimitStatus();
       }, 3000);
     } catch (error) {
       console.error("Popup initialization error:", error);
@@ -569,6 +575,34 @@ class LumaPopup {
     // Update overall UI status
     this.checkLumaPage();
     this.updatePluginStatus();
+  }
+
+  async updateDownloadLimitStatus() {
+    try {
+      const response = await chrome.runtime.sendMessage({ action: "checkDownloadLimit" });
+      const downloadCountText = document.getElementById("download-count-text");
+      
+      if (response && downloadCountText) {
+        if (response.allowed) {
+          const statusText = LanguageManager.getText("messages.downloadLimitStatus")
+            .replace("{current}", response.currentCount || 0)
+            .replace("{limit}", response.limit || 10)
+            .replace("{remaining}", response.remaining || 0);
+          downloadCountText.textContent = statusText;
+          downloadCountText.style.color = response.remaining <= 2 ? "#e17055" : "#636e72";
+        } else {
+          downloadCountText.textContent = LanguageManager.getText("messages.downloadLimitReached");
+          downloadCountText.style.color = "#e17055";
+        }
+      }
+    } catch (error) {
+      console.error("Error updating download limit status:", error);
+      const downloadCountText = document.getElementById("download-count-text");
+      if (downloadCountText) {
+        downloadCountText.textContent = "Error checking limit";
+        downloadCountText.style.color = "#e17055";
+      }
+    }
   }
 
   showError(message) {

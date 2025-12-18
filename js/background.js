@@ -2,9 +2,14 @@
 
 // const LUMA_DOMAINS = ['luma.com'];
 
+// Daily download limit
+const DAILY_DOWNLOAD_LIMIT = 10;
+
 // Installation event
 chrome.runtime.onInstalled.addListener(() => {
   console.log("EventMate installed");
+  // Initialize download count on install
+  initializeDailyDownloadCount();
 });
 
 // Get luma.auth-session-key cookie
@@ -105,7 +110,88 @@ chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
       });
     return true;
   }
+
+  if (request.action === "checkDownloadLimit") {
+    checkDailyDownloadLimit()
+      .then((result) => {
+        sendResponse(result);
+      })
+      .catch((error) => {
+        sendResponse({ allowed: false, error: error.message });
+      });
+    return true;
+  }
+
+  if (request.action === "incrementDownloadCount") {
+    incrementDownloadCount()
+      .then((result) => {
+        sendResponse(result);
+      })
+      .catch((error) => {
+        sendResponse({ success: false, error: error.message });
+      });
+    return true;
+  }
 });
+
+// Daily download limit management
+async function initializeDailyDownloadCount() {
+  try {
+    const today = new Date().toDateString();
+    const result = await chrome.storage.local.get(['downloadCount', 'lastResetDate']);
+    
+    // Reset count if it's a new day
+    if (result.lastResetDate !== today) {
+      await chrome.storage.local.set({
+        downloadCount: 0,
+        lastResetDate: today
+      });
+      console.log("Daily download count reset for new day:", today);
+    }
+  } catch (error) {
+    console.error("Error initializing download count:", error);
+  }
+}
+
+async function checkDailyDownloadLimit() {
+  try {
+    await initializeDailyDownloadCount(); // Ensure count is reset if needed
+    const result = await chrome.storage.local.get(['downloadCount']);
+    const currentCount = result.downloadCount || 0;
+    
+    return {
+      allowed: currentCount < DAILY_DOWNLOAD_LIMIT,
+      currentCount: currentCount,
+      limit: DAILY_DOWNLOAD_LIMIT,
+      remaining: DAILY_DOWNLOAD_LIMIT - currentCount
+    };
+  } catch (error) {
+    console.error("Error checking download limit:", error);
+    return { allowed: false, error: error.message };
+  }
+}
+
+async function incrementDownloadCount() {
+  try {
+    const result = await chrome.storage.local.get(['downloadCount']);
+    const currentCount = result.downloadCount || 0;
+    const newCount = currentCount + 1;
+    
+    await chrome.storage.local.set({
+      downloadCount: newCount
+    });
+    
+    console.log(`Download count incremented: ${newCount}/${DAILY_DOWNLOAD_LIMIT}`);
+    return {
+      success: true,
+      newCount: newCount,
+      remaining: DAILY_DOWNLOAD_LIMIT - newCount
+    };
+  } catch (error) {
+    console.error("Error incrementing download count:", error);
+    return { success: false, error: error.message };
+  }
+}
 
 // Helper function: validate if auth cookie is valid
 function validateAuthCookie(cookie) {

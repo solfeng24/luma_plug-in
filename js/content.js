@@ -43,6 +43,7 @@ const CONTENT_LANGUAGES = {
     messages: {
       noScrapableEvents: "No scrappable events",
       noDataToExport: "No data to export",
+      downloadLimitReached: "Daily download limit reached ({current}/{limit}), please try again tomorrow!",
       page: "Page",
       completed: "completed",
       newData: "new data",
@@ -108,6 +109,7 @@ const CONTENT_LANGUAGES = {
     messages: {
       noScrapableEvents: "暂无可抓取的活动",
       noDataToExport: "没有数据可导出",
+      downloadLimitReached: "今日下载次数已达上限 ({current}/{limit})，请明天再试！",
       page: "页",
       completed: "完成",
       newData: "条新数据",
@@ -1035,6 +1037,19 @@ class LumaDataScraper {
     console.log(`🚀 Starting to scrape event ${eventApiId}, mode: ${mode}`);
 
     try {
+      // Check daily download limit first
+      const limitResponse = await chrome.runtime.sendMessage({ action: "checkDownloadLimit" });
+      if (!limitResponse.allowed) {
+        const limitMessage = ContentLanguageManager.getText("messages.downloadLimitReached")
+          .replace("{limit}", limitResponse.limit || 10)
+          .replace("{current}", limitResponse.currentCount || 0);
+        alert(limitMessage);
+        console.log("❌ Daily download limit reached, scraping blocked");
+        return;
+      }
+      
+      console.log(`✅ Download limit check passed: ${limitResponse.currentCount}/${limitResponse.limit} used, ${limitResponse.remaining} remaining`);
+
       // Check Cookie consent status
       if (!this.cookieConsent) {
         console.log("⚠️ Cookie permission required to scrape, please authorize in plugin popup");
@@ -1528,7 +1543,7 @@ class LumaDataScraper {
   }
 
   // Export to CSV
-  exportToCSV(visitors, eventId, eventName = null) {
+  async exportToCSV(visitors, eventId, eventName = null) {
     if (!visitors || visitors.length === 0) {
       alert(ContentLanguageManager.getText("messages.noDataToExport"));
       return;
@@ -1601,6 +1616,18 @@ class LumaDataScraper {
     console.log(
       `📁 CSV file downloaded: ${visitors.length} guest data items, filename: ${a.download}`,
     );
+
+    // Increment download count after successful export
+    try {
+      const incrementResponse = await chrome.runtime.sendMessage({ action: "incrementDownloadCount" });
+      if (incrementResponse.success) {
+        console.log(`📊 Download count incremented: ${incrementResponse.newCount}/10, ${incrementResponse.remaining} remaining today`);
+      } else {
+        console.error("Failed to increment download count:", incrementResponse.error);
+      }
+    } catch (error) {
+      console.error("Error incrementing download count:", error);
+    }
   }
 
   // Create fallback UI
