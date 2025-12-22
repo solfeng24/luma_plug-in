@@ -1579,10 +1579,19 @@ class LumaDataScraper {
         headers
           .map((header) => {
             const value = visitor[header] || "";
-            if (value.toString().includes(",") || value.toString().includes('"')) {
-              return `"${value.toString().replace(/"/g, '""')}"`;
+            const stringValue = value.toString();
+            
+            // Check if the value needs to be quoted (contains comma, quote, newline, or carriage return)
+            if (stringValue.includes(",") || stringValue.includes('"') || stringValue.includes("\n") || stringValue.includes("\r")) {
+              // Escape quotes by doubling them and remove/replace newlines
+              const escapedValue = stringValue
+                .replace(/"/g, '""')
+                .replace(/\r\n/g, ' ')  // Replace Windows line endings
+                .replace(/\n/g, ' ')    // Replace Unix line endings  
+                .replace(/\r/g, ' ');   // Replace Mac line endings
+              return `"${escapedValue}"`;
             }
-            return value;
+            return stringValue;
           })
           .join(","),
       ),

@@ -492,9 +492,19 @@ class LumaPopup {
           return '""';
         }
         if (typeof value === "object") {
-          return `"${JSON.stringify(value).replace(/"/g, '""')}"`;
+          const jsonString = JSON.stringify(value)
+            .replace(/"/g, '""')
+            .replace(/\r\n/g, ' ')
+            .replace(/\n/g, ' ')
+            .replace(/\r/g, ' ');
+          return `"${jsonString}"`;
         }
-        return `"${String(value).replace(/"/g, '""')}"`;
+        const stringValue = String(value)
+          .replace(/"/g, '""')
+          .replace(/\r\n/g, ' ')  // Replace Windows line endings
+          .replace(/\n/g, ' ')    // Replace Unix line endings
+          .replace(/\r/g, ' ');   // Replace Mac line endings
+        return `"${stringValue}"`;
       });
       csvRows.push(values.join(","));
     });
